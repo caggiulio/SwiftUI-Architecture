@@ -12,8 +12,8 @@ struct ErrorManager {
 
   /// Try to decode the error from the `HTTPURLResponse` and return the right error.
   private static func decodeHBError(data: Data, response: URLResponse) -> CustomError {
-    let decoder = JSONDecoder()
-    /*if let errorResponse = try? decoder.decode(Model.Data.Error.self, from: data) {
+    /*let decoder = JSONDecoder()
+    if let errorResponse = try? decoder.decode(Model.Data.Error.self, from: data) {
       return handleCustomHBError(error: errorResponse)
     }*/
     

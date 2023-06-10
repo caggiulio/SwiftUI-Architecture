@@ -15,3 +15,5 @@ struct SwiftUIArchitectureApp: App {
         }
     }
 }
+
+#warning("TO DO: - Repository, UseCase, View and ViewModel")
