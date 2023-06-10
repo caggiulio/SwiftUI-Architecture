@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "aloynetworking",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/caggiulio/AloyNetworking",
+      "state" : {
+        "branch" : "master",
+        "revision" : "00d14c23ccccf7ff10c6a585dadf85ee30de3da4"
+      }
+    }
+  ],
+  "version" : 2
+}
