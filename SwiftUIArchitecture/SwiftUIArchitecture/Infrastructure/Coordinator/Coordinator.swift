@@ -22,9 +22,9 @@ class Coordinator: ObservableObject, Injectable {
     path.removeLast()
   }
   
-  /*/// Push the `UI.Scene.Logged.Home.View`
+  /// Push the `UI.Funnel.Home.View`
   func home() {
     path.append(CoordinatorLink.home)
-  }*/
+  }
 }
 

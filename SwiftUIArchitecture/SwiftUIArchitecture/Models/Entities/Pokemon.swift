@@ -19,6 +19,8 @@ struct Pokemon: Identifiable, PKMNModel {
   let frontImage: FrontImage
   let stats: [Stat]
   let weight: Int
+  
+  // MARK: - Init
 
   init(pokemonDataSource: PokemonDataSource) {
     abilities = pokemonDataSource.abilities.map { _abilities in

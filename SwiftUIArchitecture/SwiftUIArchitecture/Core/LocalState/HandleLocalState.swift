@@ -25,8 +25,15 @@ struct HandleLocalState<Model: CustomModel>: ViewModifier {
   func body(content: Content) -> some View {
     content
     .customPopupView(isPresented: $isLoading, popupView: {
-        // HBLoader()
-      Color.black.opacity(0.5)
+      ZStack {
+        Color.black.opacity(0.5)
+        
+        VStack {
+          ProgressView()
+          
+          Text("Loading")
+        }
+      }
     })
       .onReceive(viewModel.$localState) { output in
         switch output {

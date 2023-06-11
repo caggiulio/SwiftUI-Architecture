@@ -32,10 +32,10 @@ struct ArchitectureDependencyManager {
     StateContainer()
   }
   
-  /*/// The information repository.
-  var informationRepository: HBInformationRepositoryProtocol {
-    Repository.Information(networkingWorker: networkingManager.networkingDataSource)
-  }*/
+  /// The Pokemon repository.
+  var pokemonRepository: Repository.Pokemon {
+    Repository.Pokemon()
+  }
     
   // MARK: - Init
   
@@ -49,10 +49,10 @@ struct ArchitectureDependencyManager {
   /// This method add the depencies to shared `Resolver` instance.
   private func addDependencies() {
     let resolver = Resolver.shared
-    resolver.add(networkingManager)
     resolver.add(coordinator)
+    resolver.add(networkingManager)
     resolver.add(state)
     resolver.add(assembler)
-    // resolver.add(informationRepository)
+    resolver.add(pokemonRepository)
   }
 }

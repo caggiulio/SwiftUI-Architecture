@@ -9,9 +9,6 @@ import Foundation
 
 /// The state in which the Pokemon detail information will stored.
 struct PokemonDetail {
-  /// The Pokemon identifier.
-  var pokemonIdentifier: Int?
-  
   /// The selected Pokemon.
   var selectedPokemon: Pokemon?
 }

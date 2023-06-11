@@ -19,10 +19,10 @@ struct NetworkManager: Injectable {
   }()
 
   /// This is the implementation of `NetworkDataSourceProtocol`
-  var networkingDataSource: NetworkDataSourceProtocol
+  var worker: NetworkDataSourceProtocol
 
   init() {
-    networkingDataSource = NetworkWorker(networking: networking)
+    worker = NetworkWorker(networking: networking)
   }
 }
 

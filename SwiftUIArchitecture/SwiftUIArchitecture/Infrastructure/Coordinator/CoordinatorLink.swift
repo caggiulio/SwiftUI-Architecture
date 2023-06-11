@@ -10,6 +10,9 @@ enum CoordinatorLink: Identifiable, Hashable {
   /// The splash case.
   case splash
   
+  /// The home case.
+  case home
+  
   // MARK: - Computed Properties
   
   /// The `CoordinatorLink` used in the `ViewModel` for the bottom sheet.
@@ -25,15 +28,20 @@ enum CoordinatorLink: Identifiable, Hashable {
     switch self {
     case .splash:
       return .splash
+      
+    default:
+      return nil
     }
   }
   
   /// The `CoordinatorLink` id as `String` . Is the reflecting string of the `View` struct.
   var id: String {
-    /*switch self {
+    switch self {
     case .splash:
-      return String(reflecting: UI.Scene.PreLogin.Splash.View.self)
-    }*/
-    return ""
+      return String(reflecting: UI.Funnel.Splash.View.self)
+      
+    case .home:
+      return String(reflecting: UI.Funnel.Home.View.self)
+    }
   }
 }

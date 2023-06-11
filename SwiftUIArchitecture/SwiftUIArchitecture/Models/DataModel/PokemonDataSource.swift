@@ -34,3 +34,9 @@ struct PokemonDataSource: Decodable {
     case weight
   }
 }
+
+extension PokemonDataSource: Normalizable {
+  func normalizedForApp() -> Pokemon {
+    Pokemon(pokemonDataSource: self)
+  }
+}

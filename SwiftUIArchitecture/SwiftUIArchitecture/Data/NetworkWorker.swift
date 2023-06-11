@@ -31,7 +31,8 @@ struct NetworkWorker: NetworkDataSourceProtocol, Injectable {
     let response = try await processResponse {
       try await getPokemonDataSource(id: id)
     }
-    return Pokemon(pokemonDataSource: response)
+    
+    return response.normalizedForApp()
   }
   
   private func getPokemonDataSource(id: String) async throws -> PokemonDataSource {

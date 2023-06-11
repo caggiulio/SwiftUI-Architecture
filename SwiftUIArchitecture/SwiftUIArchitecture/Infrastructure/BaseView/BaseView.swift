@@ -6,7 +6,7 @@ import SwiftUI
 
 /// The base `View` for the module. It's specialized with a `to HB Model` and a `Content`.
 /// The base `View` handle the generic `LocalState`.
-struct BaseView<Model: CustomModel, Content>: View where Content: View {
+struct MystiqueView<Model: CustomModel, Content>: View where Content: View {
   
   // MARK: - Stored Properties
   
