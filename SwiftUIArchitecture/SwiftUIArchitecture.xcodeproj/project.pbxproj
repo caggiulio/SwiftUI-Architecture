@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4DB8CD5B2A34BE66001FD9B8 /* SwiftUIArchitectureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CD5A2A34BE66001FD9B8 /* SwiftUIArchitectureApp.swift */; };
-		4DB8CD5D2A34BE66001FD9B8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CD5C2A34BE66001FD9B8 /* ContentView.swift */; };
 		4DB8CD5F2A34BE68001FD9B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DB8CD5E2A34BE68001FD9B8 /* Assets.xcassets */; };
 		4DB8CD622A34BE68001FD9B8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DB8CD612A34BE68001FD9B8 /* Preview Assets.xcassets */; };
 		4DB8CD6C2A34BE69001FD9B8 /* SwiftUIArchitectureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CD6B2A34BE69001FD9B8 /* SwiftUIArchitectureTests.swift */; };
@@ -97,7 +96,6 @@
 /* Begin PBXFileReference section */
 		4DB8CD572A34BE66001FD9B8 /* SwiftUIArchitecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIArchitecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DB8CD5A2A34BE66001FD9B8 /* SwiftUIArchitectureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIArchitectureApp.swift; sourceTree = "<group>"; };
-		4DB8CD5C2A34BE66001FD9B8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4DB8CD5E2A34BE68001FD9B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DB8CD612A34BE68001FD9B8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4DB8CD672A34BE69001FD9B8 /* SwiftUIArchitectureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUIArchitectureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,7 +218,6 @@
 				4DB8CDAA2A34C02C001FD9B8 /* Infrastructure */,
 				4DB8CD872A34BE90001FD9B8 /* Core */,
 				4DB8CD5A2A34BE66001FD9B8 /* SwiftUIArchitectureApp.swift */,
-				4DB8CD5C2A34BE66001FD9B8 /* ContentView.swift */,
 				4DB8CD5E2A34BE68001FD9B8 /* Assets.xcassets */,
 				4DB8CD602A34BE68001FD9B8 /* Preview Content */,
 				4DB8CDC62A34C39D001FD9B8 /* Data */,
@@ -654,7 +651,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DB8CDA92A34C027001FD9B8 /* Coordinator.swift in Sources */,
-				4DB8CD5D2A34BE66001FD9B8 /* ContentView.swift in Sources */,
 				4DB8CDC02A34C2A4001FD9B8 /* CustomPopupView.swift in Sources */,
 				4DB8CDA72A34C027001FD9B8 /* SheetHelper.swift in Sources */,
 				4DB8CDC32A34C313001FD9B8 /* Extension+Array.swift in Sources */,

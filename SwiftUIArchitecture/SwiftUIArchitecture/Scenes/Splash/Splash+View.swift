@@ -20,8 +20,12 @@ extension UI.Funnel.Splash {
     var body: some SwiftUI.View {
       MystiqueView(viewModel: viewModel) {
         ZStack {
-          Image("logo")
-            .frame(width: 300, height: 300)
+          if let model = viewModel.model {
+            Image(model.imageName)
+              .frame(width: model.imageSize.width, height: model.imageSize.height)
+          } else {
+            EmptyView()
+          }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .edgesIgnoringSafeArea(.all)
