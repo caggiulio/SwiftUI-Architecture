@@ -74,6 +74,7 @@
 		4DB8CE162A34EF51001FD9B8 /* Splash+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CE152A34EF51001FD9B8 /* Splash+ViewModel.swift */; };
 		4DB8CE192A360580001FD9B8 /* Home+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CE182A360580001FD9B8 /* Home+View.swift */; };
 		4DB8CE1B2A360589001FD9B8 /* Home+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CE1A2A360589001FD9B8 /* Home+ViewModel.swift */; };
+		4DB8CE1E2A360CA3001FD9B8 /* SplashModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CE1D2A360CA3001FD9B8 /* SplashModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +164,7 @@
 		4DB8CE152A34EF51001FD9B8 /* Splash+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Splash+ViewModel.swift"; sourceTree = "<group>"; };
 		4DB8CE182A360580001FD9B8 /* Home+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home+View.swift"; sourceTree = "<group>"; };
 		4DB8CE1A2A360589001FD9B8 /* Home+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home+ViewModel.swift"; sourceTree = "<group>"; };
+		4DB8CE1D2A360CA3001FD9B8 /* SplashModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -500,6 +502,7 @@
 			isa = PBXGroup;
 			children = (
 				4DB8CE102A34EEBA001FD9B8 /* Splash+View.swift */,
+				4DB8CE1D2A360CA3001FD9B8 /* SplashModel.swift */,
 				4DB8CE152A34EF51001FD9B8 /* Splash+ViewModel.swift */,
 			);
 			path = Splash;
@@ -692,6 +695,7 @@
 				4DB8CDDE2A34C706001FD9B8 /* StatDataSource.swift in Sources */,
 				4DB8CD5B2A34BE66001FD9B8 /* SwiftUIArchitectureApp.swift in Sources */,
 				4DB8CDE02A34C706001FD9B8 /* AbilityDataSource.swift in Sources */,
+				4DB8CE1E2A360CA3001FD9B8 /* SplashModel.swift in Sources */,
 				4DB8CE072A34EA74001FD9B8 /* PokemonRepository.swift in Sources */,
 				4DB8CDFD2A34C721001FD9B8 /* Species.swift in Sources */,
 				4DB8CDFF2A34C721001FD9B8 /* PokemonsList.swift in Sources */,

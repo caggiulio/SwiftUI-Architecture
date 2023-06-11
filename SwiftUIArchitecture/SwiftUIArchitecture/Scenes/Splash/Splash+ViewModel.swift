@@ -8,11 +8,18 @@
 import Foundation
 
 extension UI.Funnel.Splash {
-  class ViewModel: MystiqueViewModel<EmptyModel> {
+  class ViewModel: MystiqueViewModel<SplashModel> {
     
     // MARK: - DidAppear
     
     override func didAppear() async throws {
+      localState = .success(
+        SplashModel(
+          imageName: "logo",
+          imageSize: CGSize(width: 300, height: 300)
+        )
+      )
+      
       try await processAndForget {
         try await UseCase.GetPokemonByIdentifier().execute()
         coordinator.home()
