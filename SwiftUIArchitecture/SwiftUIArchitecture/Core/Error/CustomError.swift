@@ -9,7 +9,6 @@ import Foundation
 public enum CustomError: Swift.Error, Equatable {
   case genericError(String)
   case resourceNotFound
-  case homeBridgeInstancesEmpties
 }
 
 // MARK: LocalizedError
@@ -24,9 +23,6 @@ extension CustomError: LocalizedError {
     
     case .resourceNotFound:
       return "Resource not found"
-    
-    case .homeBridgeInstancesEmpties:
-      return nil
     }
   }
 }
