@@ -5,7 +5,7 @@
 import Foundation
 
 /// The app state containter. The object `AppState` is a `@Published`.
-public class StateContainer: Injectable, ObservableObject {
+public class StateContainer: ObservableObject {
   @Published var state: AppState
   
   init() {

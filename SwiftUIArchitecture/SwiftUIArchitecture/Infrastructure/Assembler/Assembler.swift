@@ -5,7 +5,7 @@
 import SwiftUI
 
 /// The responsible to assemble and return the `View`s.
-struct Assembler: Injectable {}
+struct Assembler {}
 
 // MARK: - Helpers
 

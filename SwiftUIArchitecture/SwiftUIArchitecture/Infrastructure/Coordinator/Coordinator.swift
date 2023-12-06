@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// The coordinator class of the app. It's used to push a view in the current navigation stack.
-class Coordinator: ObservableObject, Injectable {
+class Coordinator: ObservableObject {
   /// The `NavigationPath` object.
   @Published var path = NavigationPath()
     

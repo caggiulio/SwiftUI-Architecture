@@ -72,6 +72,7 @@
 		4DB8CE192A360580001FD9B8 /* Home+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CE182A360580001FD9B8 /* Home+View.swift */; };
 		4DB8CE1B2A360589001FD9B8 /* Home+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CE1A2A360589001FD9B8 /* Home+ViewModel.swift */; };
 		4DB8CE1E2A360CA3001FD9B8 /* SplashModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CE1D2A360CA3001FD9B8 /* SplashModel.swift */; };
+		4DC553942B20B892008A818C /* Scopes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC553932B20B892008A818C /* Scopes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,6 +160,7 @@
 		4DB8CE182A360580001FD9B8 /* Home+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home+View.swift"; sourceTree = "<group>"; };
 		4DB8CE1A2A360589001FD9B8 /* Home+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home+ViewModel.swift"; sourceTree = "<group>"; };
 		4DB8CE1D2A360CA3001FD9B8 /* SplashModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashModel.swift; sourceTree = "<group>"; };
+		4DC553932B20B892008A818C /* Scopes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scopes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,6 +288,7 @@
 				4DB8CD9B2A34BFC4001FD9B8 /* DependencyManager */,
 				4DB8CD8D2A34BF0D001FD9B8 /* Inject.swift */,
 				4DB8CD8E2A34BF0D001FD9B8 /* Resolver.swift */,
+				4DC553932B20B892008A818C /* Scopes.swift */,
 			);
 			path = DependencyInjection;
 			sourceTree = "<group>";
@@ -660,6 +663,7 @@
 				4DB8CDFA2A34C721001FD9B8 /* FrontImage.swift in Sources */,
 				4DB8CD862A34BE8C001FD9B8 /* LocalState.swift in Sources */,
 				4DB8CD8B2A34BEA7001FD9B8 /* ErrorManager.swift in Sources */,
+				4DC553942B20B892008A818C /* Scopes.swift in Sources */,
 				4DB8CDDF2A34C706001FD9B8 /* FormsDataSource.swift in Sources */,
 				4DB8CDFE2A34C721001FD9B8 /* Stat.swift in Sources */,
 				4DB8CD9E2A34BFD2001FD9B8 /* Normalizable.swift in Sources */,

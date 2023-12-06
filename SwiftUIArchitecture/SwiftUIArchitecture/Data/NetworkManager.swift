@@ -9,7 +9,7 @@ import Foundation
 import AloyNetworking
  
 /// The manager for the networking workers.
-struct NetworkManager: Injectable {
+struct NetworkManager {
   /// The concrete implementation of `AloyNetworkingProtocol`.
   private let networking: AloyNetworkingProtocol = {
     let networking = AloyNetworking(
