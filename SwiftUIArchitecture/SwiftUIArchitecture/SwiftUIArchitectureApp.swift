@@ -11,12 +11,10 @@ import SwiftUI
 struct SwiftUIArchitectureApp: App {
   
   // MARK: - Stored Properties
-  
-  /// The `DependencyManager` that adds the dependencies in the init.
-  private let manager = DependencyManager()
-  
+    
   /// The app coordinator.
-  @ObservedObject var coordinator: Coordinator = Resolver.shared.resolve()
+  @InjectedObject
+  var coordinator: Coordinator
   
   /// The responsible of the assemble of the `View` used to assemble a view for navigation.
   @Injected var assembler: Assembler

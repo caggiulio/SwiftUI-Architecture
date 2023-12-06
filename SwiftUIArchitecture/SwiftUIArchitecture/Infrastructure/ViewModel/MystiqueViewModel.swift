@@ -23,7 +23,8 @@ open class MystiqueViewModel<Model: CustomModel>: ObservableObject {
   @Injected var assembler: Assembler
   
   /// The coordinator of the app.
-  @ObservedObject var coordinator: Coordinator = Resolver.shared.resolve()
+  @InjectedObject
+  var coordinator: Coordinator
   
   /// The app state.
   @Injected var appState: StateContainer

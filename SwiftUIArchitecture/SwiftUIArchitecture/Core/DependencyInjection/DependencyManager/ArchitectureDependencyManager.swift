@@ -33,7 +33,7 @@ struct ArchitectureDependencyManager {
   }
   
   /// The Pokemon repository.
-  var pokemonRepository: Repository.Pokemon {
+  @MainActor var pokemonRepository: Repository.Pokemon {
     Repository.Pokemon()
   }
     
@@ -48,11 +48,15 @@ struct ArchitectureDependencyManager {
   
   /// This method add the depencies to shared `Resolver` instance.
   private func addDependencies() {
-    let resolver = Resolver.shared
-    resolver.add(state)
-    resolver.add(pokemonRepository)
-    resolver.add(assembler)
-    resolver.add(networkingManager)
-    resolver.add(coordinator)
   }
+}
+
+extension Resolver: ResolverRegistering {
+    public static func registerAllServices() {
+      Resolver.register { Repository.Pokemon() }.scope(.cached)
+      Resolver.register { StateContainer() }.scope(.cached)
+      Resolver.register { Coordinator() }.scope(.cached)
+      Resolver.register { NetworkManager() }.scope(.cached)
+      Resolver.register { Assembler() }.scope(.cached)
+    }
 }
