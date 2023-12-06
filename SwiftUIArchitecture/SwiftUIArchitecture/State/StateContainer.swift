@@ -8,7 +8,7 @@ import Foundation
 public class StateContainer: Injectable, ObservableObject {
   @Published var state: AppState
   
-  init() {
+  required init() {
     state = AppState()
   }
 }

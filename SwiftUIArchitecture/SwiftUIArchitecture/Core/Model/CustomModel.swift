@@ -2,6 +2,6 @@
 //  CustomModel.swift
 //
 
-public protocol CustomModel {}
+public protocol CustomModel: Sendable {}
 
 struct EmptyModel: CustomModel {}

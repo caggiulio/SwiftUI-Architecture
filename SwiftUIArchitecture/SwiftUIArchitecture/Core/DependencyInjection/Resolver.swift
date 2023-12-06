@@ -34,10 +34,6 @@ class Resolver {
   /// - Returns: the `Injectable` to resolve.
   func resolve<T: Injectable>() -> T {
     let key = String(reflecting: T.self)
-    guard let injectable = storage[key] as? T else {
-      fatalError("\(key) has not been added as an injectable object.")
-    }
-      
-    return injectable
+    return storage[key] as? T ?? T()
   }
 }

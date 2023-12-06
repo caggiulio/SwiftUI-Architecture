@@ -5,7 +5,9 @@
 import Foundation
 
 /// The `Injectable` protocol.
-protocol Injectable {}
+protocol Injectable {
+  init()
+}
 
 @propertyWrapper
 /// The `Inject` property wrapper.

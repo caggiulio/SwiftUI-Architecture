@@ -25,4 +25,3 @@ struct NetworkManager: Injectable {
     worker = NetworkWorker(networking: networking)
   }
 }
-

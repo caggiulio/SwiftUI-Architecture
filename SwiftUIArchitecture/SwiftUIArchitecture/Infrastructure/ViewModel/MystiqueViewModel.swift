@@ -6,7 +6,7 @@
 import Combine
 import SwiftUI
 
-open class MystiqueViewModel<Model: CustomModel>: ObservableObject, SheetHelperProtocol {
+open class MystiqueViewModel<Model: CustomModel>: ObservableObject {
   // MARK: - Computed Properties
   
   /// The loading state with his related `Model`.
@@ -15,9 +15,6 @@ open class MystiqueViewModel<Model: CustomModel>: ObservableObject, SheetHelperP
   /// The last value of the `Model` if exist. This variable is assigned when a `LocalState`
   /// become `.success`.
   @Published var model: Model?
-  
-  /// The `CoordinatorLink` used to determine the sheet to show. When is set, the `View` will try to show the sheet.
-  @Published var sheetLink: CoordinatorLink?
   
   /// Wheter the view has the default background. `true` by default.
   @Published var hasDefaultBackground: Bool = true

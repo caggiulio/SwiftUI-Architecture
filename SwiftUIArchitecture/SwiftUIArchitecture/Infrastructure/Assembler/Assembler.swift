@@ -5,17 +5,7 @@
 import SwiftUI
 
 /// The responsible to assemble and return the `View`s.
-struct Assembler: Injectable {
-  /// Returns the `Splash` view.
-  func splash() -> UI.Funnel.Splash.View {
-    UI.Funnel.Splash.View()
-  }
-  
-  /// Returns the `Home` view.
-  func home() -> UI.Funnel.Home.View {
-    UI.Funnel.Home.View()
-  }
-}
+struct Assembler: Injectable {}
 
 // MARK: - Helpers
 
@@ -23,14 +13,15 @@ extension Assembler {
   /// Solve the navigation basing on `CoordinatorLink`.
   /// - Parameter destination: The `CoordinatorLink`.
   /// - Returns: The related `SwiftUI.View`.
+  @MainActor 
   @ViewBuilder
   func navigateTo(destination: CoordinatorLink) -> some View {
     switch destination {
     case .splash:
-      splash()
+      UI.Funnel.Splash.View()
       
     case .home:
-      home()
+      UI.Funnel.Home.View()
     }
   }
 }

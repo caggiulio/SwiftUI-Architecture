@@ -10,7 +10,7 @@ import AloyNetworking
 
 // MARK: - NetworkWorker
 
-struct NetworkWorker: NetworkDataSourceProtocol, Injectable {
+struct NetworkWorker: NetworkDataSourceProtocol {
   
   // MARK: - Protocol properties
 

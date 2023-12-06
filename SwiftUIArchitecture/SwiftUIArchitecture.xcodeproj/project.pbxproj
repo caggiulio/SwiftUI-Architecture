@@ -24,8 +24,6 @@
 		4DB8CD9A2A34BF6B001FD9B8 /* DependencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CD982A34BF6B001FD9B8 /* DependencyManager.swift */; };
 		4DB8CD9E2A34BFD2001FD9B8 /* Normalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CD9D2A34BFD2001FD9B8 /* Normalizable.swift */; };
 		4DB8CDA62A34C027001FD9B8 /* CoordinatorLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CDA12A34C027001FD9B8 /* CoordinatorLink.swift */; };
-		4DB8CDA72A34C027001FD9B8 /* SheetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CDA32A34C027001FD9B8 /* SheetHelper.swift */; };
-		4DB8CDA82A34C027001FD9B8 /* SheetHelperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CDA42A34C027001FD9B8 /* SheetHelperProtocol.swift */; };
 		4DB8CDA92A34C027001FD9B8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CDA52A34C027001FD9B8 /* Coordinator.swift */; };
 		4DB8CDAD2A34C065001FD9B8 /* MystiqueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CDAC2A34C065001FD9B8 /* MystiqueViewModel.swift */; };
 		4DB8CDAF2A34C0AE001FD9B8 /* CustomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CDAE2A34C0AE001FD9B8 /* CustomModel.swift */; };
@@ -114,8 +112,6 @@
 		4DB8CD982A34BF6B001FD9B8 /* DependencyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencyManager.swift; sourceTree = "<group>"; };
 		4DB8CD9D2A34BFD2001FD9B8 /* Normalizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Normalizable.swift; sourceTree = "<group>"; };
 		4DB8CDA12A34C027001FD9B8 /* CoordinatorLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorLink.swift; sourceTree = "<group>"; };
-		4DB8CDA32A34C027001FD9B8 /* SheetHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetHelper.swift; sourceTree = "<group>"; };
-		4DB8CDA42A34C027001FD9B8 /* SheetHelperProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetHelperProtocol.swift; sourceTree = "<group>"; };
 		4DB8CDA52A34C027001FD9B8 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		4DB8CDAC2A34C065001FD9B8 /* MystiqueViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MystiqueViewModel.swift; sourceTree = "<group>"; };
 		4DB8CDAE2A34C0AE001FD9B8 /* CustomModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomModel.swift; sourceTree = "<group>"; };
@@ -325,19 +321,9 @@
 			isa = PBXGroup;
 			children = (
 				4DB8CDA12A34C027001FD9B8 /* CoordinatorLink.swift */,
-				4DB8CDA22A34C027001FD9B8 /* Sheet */,
 				4DB8CDA52A34C027001FD9B8 /* Coordinator.swift */,
 			);
 			path = Coordinator;
-			sourceTree = "<group>";
-		};
-		4DB8CDA22A34C027001FD9B8 /* Sheet */ = {
-			isa = PBXGroup;
-			children = (
-				4DB8CDA32A34C027001FD9B8 /* SheetHelper.swift */,
-				4DB8CDA42A34C027001FD9B8 /* SheetHelperProtocol.swift */,
-			);
-			path = Sheet;
 			sourceTree = "<group>";
 		};
 		4DB8CDAA2A34C02C001FD9B8 /* Infrastructure */ = {
@@ -652,7 +638,6 @@
 			files = (
 				4DB8CDA92A34C027001FD9B8 /* Coordinator.swift in Sources */,
 				4DB8CDC02A34C2A4001FD9B8 /* CustomPopupView.swift in Sources */,
-				4DB8CDA72A34C027001FD9B8 /* SheetHelper.swift in Sources */,
 				4DB8CDC32A34C313001FD9B8 /* Extension+Array.swift in Sources */,
 				4DB8CE0C2A34ED26001FD9B8 /* UseCase.swift in Sources */,
 				4DB8CDDC2A34C706001FD9B8 /* PokemonListItemDataSource.swift in Sources */,
@@ -665,7 +650,6 @@
 				4DB8CDF62A34C721001FD9B8 /* CurrentWeather.swift in Sources */,
 				4DB8CDE42A34C706001FD9B8 /* StatsDataSource.swift in Sources */,
 				4DB8CDF52A34C721001FD9B8 /* Ability.swift in Sources */,
-				4DB8CDA82A34C027001FD9B8 /* SheetHelperProtocol.swift in Sources */,
 				4DB8CDB82A34C1E8001FD9B8 /* BaseView.swift in Sources */,
 				4DB8CD8F2A34BF0D001FD9B8 /* Inject.swift in Sources */,
 				4DB8CE112A34EEBA001FD9B8 /* Splash+View.swift in Sources */,
@@ -804,6 +788,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
 			};
 			name = Debug;
 		};
@@ -857,6 +842,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -884,7 +870,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ncg.SwiftUIArchitecture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -913,7 +904,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ncg.SwiftUIArchitecture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

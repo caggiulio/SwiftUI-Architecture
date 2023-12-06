@@ -49,10 +49,10 @@ struct ArchitectureDependencyManager {
   /// This method add the depencies to shared `Resolver` instance.
   private func addDependencies() {
     let resolver = Resolver.shared
-    resolver.add(coordinator)
-    resolver.add(networkingManager)
     resolver.add(state)
-    resolver.add(assembler)
     resolver.add(pokemonRepository)
+    resolver.add(assembler)
+    resolver.add(networkingManager)
+    resolver.add(coordinator)
   }
 }

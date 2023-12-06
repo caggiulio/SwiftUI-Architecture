@@ -30,16 +30,14 @@ struct MystiqueView<Model: CustomModel, Content>: View where Content: View {
   // MARK: - View
   
   var body: some View {
-    SheetHelper(stateContainer: viewModel) {
-      content
-        .handleLocalState(viewModel: viewModel)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .onAppear {
-          Task {
-            try await viewModel.didAppear()
-          }
+    content
+      .handleLocalState(viewModel: viewModel)
+      .frame(maxWidth: .infinity, maxHeight: .infinity)
+      .onAppear {
+        Task {
+          try await viewModel.didAppear()
         }
-    }
+      }
   }
 }
 
