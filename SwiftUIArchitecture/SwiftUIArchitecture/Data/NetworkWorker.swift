@@ -49,6 +49,7 @@ private extension NetworkWorker {
       return try await function()
     } catch let error {
       guard case AloyNetworkingError.underlying(response: let response, data: let data) = error, let data, let response else { throw CustomError.genericError(error.localizedDescription) }
+      
       throw ErrorManager.parseHBError(data: data, response: response)
     }
   }

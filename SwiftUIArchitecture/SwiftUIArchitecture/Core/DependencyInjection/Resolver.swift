@@ -8,8 +8,6 @@ import SwiftUI
 import Foundation
 #endif
 
-// swiftlint:disable file_length
-
 /// The `ResolverRegistering` protocol is used to register all services.
 @MainActor
 public protocol ResolverRegistering {
@@ -112,8 +110,7 @@ public final class Resolver {
   ///   - factory: Closure that constructs and returns instances of the Service.
   /// - Returns: `ResolverOptions` instance that allows further customization of registered Service.
   @discardableResult
-  public static func register<Service>(_ type: Service.Type = Service.self, name: Resolver.Name? = nil,
-                                       factory: @escaping ResolverFactory<Service>) -> ResolverOptions<Service> {
+  public static func register<Service>(_ type: Service.Type = Service.self, name: Resolver.Name? = nil, factory: @escaping ResolverFactory<Service>) -> ResolverOptions<Service> {
     return main.register(type, name: name, factory: factory)
   }
   
@@ -124,8 +121,7 @@ public final class Resolver {
   ///   - factory: Closure that constructs and returns instances of the Service.
   /// - Returns: `ResolverOptions` instance that allows further customization of registered Service.
   @discardableResult
-  public static func register<Service>(_ type: Service.Type = Service.self, name: Resolver.Name? = nil,
-                                       factory: @escaping ResolverFactoryResolver<Service>) -> ResolverOptions<Service> {
+  public static func register<Service>(_ type: Service.Type = Service.self, name: Resolver.Name? = nil, factory: @escaping ResolverFactoryResolver<Service>) -> ResolverOptions<Service> {
     return main.register(type, name: name, factory: factory)
   }
   
@@ -137,8 +133,7 @@ public final class Resolver {
   /// - Returns: ResolverOptions instance that allows further customization of registered Service.
   ///
   @discardableResult
-  public static func register<Service>(_ type: Service.Type = Service.self, name: Resolver.Name? = nil,
-                                       factory: @escaping ResolverFactoryArgumentsN<Service>) -> ResolverOptions<Service> {
+  public static func register<Service>(_ type: Service.Type = Service.self, name: Resolver.Name? = nil, factory: @escaping ResolverFactoryArgumentsN<Service>) -> ResolverOptions<Service> {
     return main.register(type, name: name, factory: factory)
   }
   
@@ -149,8 +144,7 @@ public final class Resolver {
   ///   - factory: Closure that constructs and returns instances of the Service.
   /// - Returns: `ResolverOptions` instance that allows further customization of registered Service.
   @discardableResult
-  public final func register<Service>(_ type: Service.Type = Service.self, name: Resolver.Name? = nil,
-                                      factory: @escaping ResolverFactory<Service>) -> ResolverOptions<Service> {
+  public final func register<Service>(_ type: Service.Type = Service.self, name: Resolver.Name? = nil, factory: @escaping ResolverFactory<Service>) -> ResolverOptions<Service> {
     lock.lock()
     defer { lock.unlock() }
     let key = Int(bitPattern: ObjectIdentifier(type))
@@ -167,8 +161,7 @@ public final class Resolver {
   ///   - factory: Closure that constructs and returns instances of the Service.
   /// - Returns: `ResolverOptions` instance that allows further customization of registered Service.
   @discardableResult
-  public final func register<Service>(_ type: Service.Type = Service.self, name: Resolver.Name? = nil,
-                                      factory: @escaping ResolverFactoryResolver<Service>) -> ResolverOptions<Service> {
+  public final func register<Service>(_ type: Service.Type = Service.self, name: Resolver.Name? = nil, factory: @escaping ResolverFactoryResolver<Service>) -> ResolverOptions<Service> {
     lock.lock()
     defer { lock.unlock() }
     let key = Int(bitPattern: ObjectIdentifier(type))
@@ -185,8 +178,7 @@ public final class Resolver {
   ///   - factory: Closure that constructs and returns instances of the Service.
   /// - Returns: `ResolverOptions` instance that allows further customization of registered Service.
   @discardableResult
-  public final func register<Service>(_ type: Service.Type = Service.self, name: Resolver.Name? = nil,
-                                      factory: @escaping ResolverFactoryArgumentsN<Service>) -> ResolverOptions<Service> {
+  public final func register<Service>(_ type: Service.Type = Service.self, name: Resolver.Name? = nil, factory: @escaping ResolverFactoryArgumentsN<Service>) -> ResolverOptions<Service> {
     lock.lock()
     defer { lock.unlock() }
     let key = Int(bitPattern: ObjectIdentifier(type))
