@@ -5,10 +5,10 @@
 import SwiftUI
 
 /**
- The `HandleLocalState` view modifier is used to handle the `LocalState` of a `View`. It is a `ViewModifier` that takes a generic `Model` type conforming to `HBModel`, and a viewModel instance of `MystiqueViewModel` with the same `Model` type. This modifier manages the loading state of the view, shows alerts for errors, and updates the toast model based on the `LocalState` of the `viewModel`.
-
- The Model type is the generic `HBModel` that a `View` can handle.
-*/
+ The `HandleLocalState` view modifier is used to handle the `LocalState` of a `View`. It is a `ViewModifier` that takes a generic `Model` type conforming to `CustomModel`, and a viewModel instance of `MystiqueViewModel` with the same `Model` type. This modifier manages the loading state of the view, shows alerts for errors, and updates the toast model based on the `LocalState` of the `viewModel`.
+ 
+ The Model type is the generic `CustomModel` that a `View` can handle.
+ */
 struct HandleLocalState<Model: CustomModel>: ViewModifier {
   
   // MARK: - Stored Properties
@@ -24,17 +24,17 @@ struct HandleLocalState<Model: CustomModel>: ViewModifier {
   
   func body(content: Content) -> some View {
     content
-    .customPopupView(isPresented: $isLoading, popupView: {
-      ZStack {
-        Color.black.opacity(0.5)
-        
-        VStack {
-          ProgressView()
+      .customPopupView(isPresented: $isLoading, popupView: {
+        ZStack {
+          Color.black.opacity(0.5)
           
-          Text("Loading")
+          VStack {
+            ProgressView()
+            
+            Text("Loading")
+          }
         }
-      }
-    })
+      })
       .onReceive(viewModel.$localState) { output in
         switch output {
         case .loading:
