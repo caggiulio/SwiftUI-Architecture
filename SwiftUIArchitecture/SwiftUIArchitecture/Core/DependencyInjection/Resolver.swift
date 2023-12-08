@@ -47,9 +47,6 @@ public final class Resolver {
   /// Internal scope cache used for .scope(.container)
   public lazy var cache: ResolverScope = ResolverScopeCache()
   
-  /// Decorator applied to all resolved objects
-  public static var decorate: ((_ service: Any) -> Void)?
-  
   // MARK: - Init
   
   /// Initialize with optional child scope.
@@ -106,85 +103,52 @@ public final class Resolver {
   /// Static shortcut function used to register a specifc Service type and its instantiating factory method.
   /// - Parameters:
   ///   - type: Type of Service being registered. Optional, may be inferred by factory result type.
-  ///   - name: Named variant of Service being registered.
   ///   - factory: Closure that constructs and returns instances of the Service.
   /// - Returns: `ResolverOptions` instance that allows further customization of registered Service.
   @discardableResult
-  public static func register<Service>(_ type: Service.Type = Service.self, name: Resolver.Name? = nil, factory: @escaping ResolverFactory<Service>) -> ResolverOptions<Service> {
-    return main.register(type, name: name, factory: factory)
+  public static func register<Service>(_ type: Service.Type = Service.self, factory: @escaping ResolverFactory<Service>) -> ResolverOptions<Service> {
+    return main.register(type, factory: factory)
   }
   
   /// Static shortcut function used to register a specific Service type and its instantiating factory method.
   /// - Parameters:
   ///   - type: Type of Service being registered. Optional, may be inferred by factory result type.
-  ///   - name: Named variant of Service being registered.
   ///   - factory: Closure that constructs and returns instances of the Service.
   /// - Returns: `ResolverOptions` instance that allows further customization of registered Service.
   @discardableResult
-  public static func register<Service>(_ type: Service.Type = Service.self, name: Resolver.Name? = nil, factory: @escaping ResolverFactoryResolver<Service>) -> ResolverOptions<Service> {
-    return main.register(type, name: name, factory: factory)
-  }
-  
-  /// Static shortcut function used to register a specific Service type and its instantiating factory method with multiple argument support.
-  /// - Parameters:
-  ///   - type: Type of Service being registered. Optional, may be inferred by factory result type.
-  ///   - name: Named variant of Service being registered.
-  ///   - factory: Closure that accepts arguments and constructs and returns instances of the Service.
-  /// - Returns: ResolverOptions instance that allows further customization of registered Service.
-  ///
-  @discardableResult
-  public static func register<Service>(_ type: Service.Type = Service.self, name: Resolver.Name? = nil, factory: @escaping ResolverFactoryArgumentsN<Service>) -> ResolverOptions<Service> {
-    return main.register(type, name: name, factory: factory)
+  public static func register<Service>(_ type: Service.Type = Service.self, factory: @escaping ResolverFactoryResolver<Service>) -> ResolverOptions<Service> {
+    return main.register(type, factory: factory)
   }
   
   /// Registers a specific Service type and its instantiating factory method.
   /// - Parameters:
   ///   - type: Type of Service being registered. Optional, may be inferred by factory result type.
-  ///   - name: Named variant of Service being registered.
   ///   - factory: Closure that constructs and returns instances of the Service.
   /// - Returns: `ResolverOptions` instance that allows further customization of registered Service.
   @discardableResult
-  public final func register<Service>(_ type: Service.Type = Service.self, name: Resolver.Name? = nil, factory: @escaping ResolverFactory<Service>) -> ResolverOptions<Service> {
+  public final func register<Service>(_ type: Service.Type = Service.self, factory: @escaping ResolverFactory<Service>) -> ResolverOptions<Service> {
     lock.lock()
     defer { lock.unlock() }
     let key = Int(bitPattern: ObjectIdentifier(type))
     let factory: ResolverFactoryAnyArguments = { (_,_) in factory() }
-    let registration = ResolverRegistration<Service>(resolver: self, key: key, name: name, factory: factory)
-    add(registration: registration, with: key, name: name)
+    let registration = ResolverRegistration<Service>(resolver: self, key: key, factory: factory)
+    add(registration: registration, with: key)
     return ResolverOptions(registration: registration)
   }
   
   /// Registers a specific Service type and its instantiating factory method.
   /// - Parameters:
   ///   - type: Type of Service being registered. Optional, may be inferred by factory result type.
-  ///   - name: Named variant of Service being registered.
   ///   - factory: Closure that constructs and returns instances of the Service.
   /// - Returns: `ResolverOptions` instance that allows further customization of registered Service.
   @discardableResult
-  public final func register<Service>(_ type: Service.Type = Service.self, name: Resolver.Name? = nil, factory: @escaping ResolverFactoryResolver<Service>) -> ResolverOptions<Service> {
+  public final func register<Service>(_ type: Service.Type = Service.self, factory: @escaping ResolverFactoryResolver<Service>) -> ResolverOptions<Service> {
     lock.lock()
     defer { lock.unlock() }
     let key = Int(bitPattern: ObjectIdentifier(type))
     let factory: ResolverFactoryAnyArguments = { (r,_) in factory(r) }
-    let registration = ResolverRegistration<Service>(resolver: self, key: key, name: name, factory: factory)
-    add(registration: registration, with: key, name: name)
-    return ResolverOptions(registration: registration)
-  }
-  
-  /// Registers a specific Service type and its instantiating factory method.
-  /// - Parameters:
-  ///   - type: Type of Service being registered. Optional, may be inferred by factory result type.
-  ///   - name: Named variant of Service being registered.
-  ///   - factory: Closure that constructs and returns instances of the Service.
-  /// - Returns: `ResolverOptions` instance that allows further customization of registered Service.
-  @discardableResult
-  public final func register<Service>(_ type: Service.Type = Service.self, name: Resolver.Name? = nil, factory: @escaping ResolverFactoryArgumentsN<Service>) -> ResolverOptions<Service> {
-    lock.lock()
-    defer { lock.unlock() }
-    let key = Int(bitPattern: ObjectIdentifier(type))
-    let factory: ResolverFactoryAnyArguments = { (r,a) in factory(r, Args(a)) }
-    let registration = ResolverRegistration<Service>(resolver: self, key: key, name: name, factory: factory )
-    add(registration: registration, with: key, name: name)
+    let registration = ResolverRegistration<Service>(resolver: self, key: key, factory: factory)
+    add(registration: registration, with: key)
     return ResolverOptions(registration: registration)
   }
   
@@ -193,53 +157,44 @@ public final class Resolver {
   /// Static function calls the root registry to resolve a given Service type.
   /// - Parameters:
   ///   - type: Type of Service being resolved. Optional, may be inferred by assignment result type.
-  ///   - name: Named variant of Service being resolved.
   ///   - args: Optional arguments that may be passed to registration factory.
   /// - Returns: Instance of specified Service.
-  public static func resolve<Service>(_ type: Service.Type = Service.self, name: Resolver.Name? = nil, args: Any? = nil) -> Service {
+  public static func resolve<Service>(_ type: Service.Type = Service.self, args: Any? = nil) -> Service {
     lock.lock()
     defer { lock.unlock() }
     registrationCheck()
-    if let registration = root.lookup(type, name: name), let service = registration.resolve(resolver: root, args: args) {
-#if DEBUG
-      Resolver.decorate?(service)
-#endif
+    if let registration = root.lookup(type), let service = registration.resolve(resolver: root, args: args) {
+
       return service
     }
-    fatalError("RESOLVER: '\(Service.self):\(name?.rawValue ?? "NONAME")' not resolved. To disambiguate optionals use resolver.optional().")
+    fatalError("RESOLVER: '\(Service.self): not resolved. To disambiguate optionals use resolver.optional().")
   }
   
   /// - Parameters:
   ///   - type: Type of Service being resolved. Optional, may be inferred by assignment result type.
-  ///   - name: Named variant of Service being resolved.
   ///   - args: Optional arguments that may be passed to registration factory.
   /// - Returns: Instance of specified Service.
-  public final func resolve<Service>(_ type: Service.Type = Service.self, name: Resolver.Name? = nil, args: Any? = nil) -> Service {
+  public final func resolve<Service>(_ type: Service.Type = Service.self, args: Any? = nil) -> Service {
     lock.lock()
     defer { lock.unlock() }
     registrationCheck()
-    if let registration = lookup(type, name: name), let service = registration.resolve(resolver: self, args: args) {
-#if DEBUG
-      Resolver.decorate?(service)
-#endif
+    if let registration = lookup(type), let service = registration.resolve(resolver: self, args: args) {
+
       return service
     }
-    fatalError("RESOLVER: '\(Service.self):\(name?.rawValue ?? "NONAME")' not resolved. To disambiguate optionals use resolver.optional().")
+    fatalError("RESOLVER: '\(Service.self) not resolved. To disambiguate optionals use resolver.optional().")
   }
   
   /// - Parameters:
   ///   - type: Type of Service being resolved. Optional, may be inferred by assignment result type.
-  ///   - name: Named variant of Service being resolved.
   ///   - args: Optional arguments that may be passed to registration factory.
   /// - Returns: Instance of specified Service.
-  public static func optional<Service>(_ type: Service.Type = Service.self, name: Resolver.Name? = nil, args: Any? = nil) -> Service? {
+  public static func optional<Service>(_ type: Service.Type = Service.self, args: Any? = nil) -> Service? {
     lock.lock()
     defer { lock.unlock() }
     registrationCheck()
-    if let registration = root.lookup(type, name: name), let service = registration.resolve(resolver: root, args: args) {
-#if DEBUG
-      Resolver.decorate?(service)
-#endif
+    if let registration = root.lookup(type), let service = registration.resolve(resolver: root, args: args) {
+
       return service
     }
     return nil
@@ -247,17 +202,14 @@ public final class Resolver {
   
   /// - Parameters:
   ///   - type: Type of Service being resolved. Optional, may be inferred by assignment result type.
-  ///   - name: Named variant of Service being resolved.
   ///   - args: Optional arguments that may be passed to registration factory.
   /// - Returns: Instance of specified Service.
-  public final func optional<Service>(_ type: Service.Type = Service.self, name: Resolver.Name? = nil, args: Any? = nil) -> Service? {
+  public final func optional<Service>(_ type: Service.Type = Service.self, args: Any? = nil) -> Service? {
     lock.lock()
     defer { lock.unlock() }
     registrationCheck()
-    if let registration = lookup(type, name: name), let service = registration.resolve(resolver: self, args: args) {
-#if DEBUG
-      Resolver.decorate?(service)
-#endif
+    if let registration = lookup(type), let service = registration.resolve(resolver: self, args: args) {
+
       return service
     }
     return nil
@@ -267,20 +219,15 @@ public final class Resolver {
   /// the supplied type and name.
   /// - Parameters:
   ///   - type: Type of Service being resolved. Optional, may be inferred by assignment result type.
-  ///   - name: Named variant of Service being resolved.
   ///   - args: Optional arguments that may be passed to registration factory.
   /// - Returns: The `ResolverRegistration` object.
-  private final func lookup<Service>(_ type: Service.Type, name: Resolver.Name?) -> ResolverRegistration<Service>? {
+  private final func lookup<Service>(_ type: Service.Type) -> ResolverRegistration<Service>? {
     let key = Int(bitPattern: ObjectIdentifier(type))
-    if let name = name?.rawValue {
-      if let registration = namedRegistrations["\(key):\(name)"] as? ResolverRegistration<Service> {
-        return registration
-      }
-    } else if let registration = typedRegistrations[key] as? ResolverRegistration<Service> {
+    if let registration = typedRegistrations[key] as? ResolverRegistration<Service> {
       return registration
     }
     for child in childContainers {
-      if let registration = child.lookup(type, name: name) {
+      if let registration = child.lookup(type) {
         return registration
       }
     }
@@ -291,20 +238,13 @@ public final class Resolver {
   /// - Parameters:
   ///   - registration: The `ResolverRegistration` base class provides storage for the registration keys, scope, and property mutator.
   ///   - key: The key.
-  ///   - name: Named variant of Service being resolved.
-  private final func add<Service>(registration: ResolverRegistration<Service>, with key: Int, name: Resolver.Name?) {
-    if let name = name?.rawValue {
-      namedRegistrations["\(key):\(name)"] = registration
-    } else {
-      typedRegistrations[key] = registration
-    }
+  private final func add<Service>(registration: ResolverRegistration<Service>, with key: Int) {
+    typedRegistrations[key] = registration
   }
   
-  private let NONAME = "*"
   private let lock = Resolver.lock
   private var childContainers: [Resolver] = []
   private var typedRegistrations = [Int : Any]()
-  private var namedRegistrations = [String : Any]()
 }
 
 /// Resolving an instance of a service is a recursive process (service A needs a B which needs a C).
@@ -331,171 +271,6 @@ extension Resolver {
   fileprivate static let lock = ResolverRecursiveLock()
 }
 
-/// Resolver Service Name Space Support
-@MainActor
-extension Resolver {
-  /// Internal class used by `Resolver` for typed name space support.
-  public struct Name: ExpressibleByStringLiteral, Hashable, Equatable {
-    public let rawValue: String
-    public init(_ rawValue: String) {
-      self.rawValue = rawValue
-    }
-    public init(stringLiteral: String) {
-      self.rawValue = stringLiteral
-    }
-    public static func name(fromString string: String?) -> Name? {
-      if let string = string { return Name(string) }
-      return nil
-    }
-    static public func == (lhs: Name, rhs: Name) -> Bool {
-      return lhs.rawValue == rhs.rawValue
-    }
-    public func hash(into hasher: inout Hasher) {
-      hasher.combine(rawValue)
-    }
-  }
-}
-
-/// Resolver Multiple Argument Support
-@MainActor
-extension Resolver {
-  /// Internal class used by Resolver for multiple argument support.
-  public struct Args {
-    /// Private storage for the arguments.
-    private var args: [String: Any?]
-    
-    /**
-     Initializes an `Args` instance with the given arguments.
-     
-     - Parameter args: The arguments to be stored.
-     
-     ### Usage Example:
-     
-     ```swift
-     let arguments = Resolver.Args(["key": value])
-     ```
-     
-     */
-    public init(_ args: Any?) {
-      if let args = args as? Args {
-        self.args = args.args
-      } else if let args = args as? [String: Any?] {
-        self.args = args
-      } else {
-        self.args = ["": args]
-      }
-    }
-    
-    /**
-     Retrieves the value associated with the specified key.
-     
-     - Parameter key: The key to look up.
-     
-     - Returns: The value associated with the key.
-     
-     ### Usage Example:
-     
-     ```swift
-     let result: String = arguments.get("key")
-     ```
-     
-     - Important: This method assumes a single argument is present. If multiple arguments are used, consider using keyed arguments.
-     
-     */
-    public func get<T>(_ key: String) -> T {
-      return (args[key] as? T)!
-    }
-    
-    /**
-     Retrieves the value of the first argument.
-     
-     - Returns: The value of the first argument.
-     
-     ### Usage Example:
-     
-     ```swift
-     let result: String = arguments.get()
-     ```
-     
-     - Important: This method assumes a single argument is present. If multiple arguments are used, consider using keyed arguments.
-     
-     */
-    public func get<T>() -> T {
-      assert(args.count == 1, "argument order indeterminate, use keyed arguments")
-      return (args.first?.value as? T)!
-    }
-    
-    /**
-     Retrieves the optional value associated with the specified key.
-     
-     - Parameter key: The key to look up.
-     
-     - Returns: The optional value associated with the key.
-     
-     ### Usage Example:
-     
-     ```swift
-     let result: String? = arguments.optional("key")
-     ```
-     
-     */
-    public func optional<T>(_ key: String) -> T? {
-      return args[key] as? T
-    }
-    
-    /**
-     Retrieves the optional value of the first argument.
-     
-     - Returns: The optional value of the first argument.
-     
-     ### Usage Example:
-     
-     ```swift
-     let result: String? = arguments.optional()
-     ```
-     
-     */
-    public func optional<T>() -> T? {
-      return args.first?.value as? T
-    }
-    
-    /**
-     Calls the `Args` instance as a function to retrieve the value associated with the specified key.
-     
-     - Parameter key: The key to look up.
-     
-     - Returns: The value associated with the key.
-     
-     ### Usage Example:
-     
-     ```swift
-     let result: String = arguments("key")
-     ```
-     
-     */
-    public func callAsFunction<T>(_ key: String) -> T {
-      return (args[key] as? T)!
-    }
-    
-    /**
-     Calls the `Args` instance as a function to retrieve the value of the first argument.
-     
-     - Returns: The value of the first argument.
-     
-     ### Usage Example:
-     
-     ```swift
-     let result: String = arguments()
-     ```
-     
-     */
-    public func callAsFunction<T>() -> T {
-      assert(args.count == 1, "argument order indeterminate, use keyed arguments")
-      return (args.first?.value as? T)!
-    }
-  }
-}
-
 // Registration Internals
 
 @MainActor
@@ -515,10 +290,8 @@ private func registrationCheck() {
 
 public typealias ResolverFactory<Service> = () -> Service?
 public typealias ResolverFactoryResolver<Service> = (_ resolver: Resolver) -> Service?
-public typealias ResolverFactoryArgumentsN<Service> = (_ resolver: Resolver, _ args: Resolver.Args) -> Service?
 public typealias ResolverFactoryAnyArguments<Service> = (_ resolver: Resolver, _ args: Any?) -> Service?
 public typealias ResolverFactoryMutator<Service> = (_ resolver: Resolver, _ service: Service) -> Void
-public typealias ResolverFactoryMutatorArgumentsN<Service> = (_ resolver: Resolver, _ service: Service, _ args: Resolver.Args) -> Void
 
 /// A ResolverOptions instance is returned by a registration function in order to allow additional configuration. (e.g. scopes, etc.)
 public struct ResolverOptions<Service> {
@@ -539,8 +312,8 @@ public struct ResolverOptions<Service> {
   ///
   @MainActor
   @discardableResult
-  public func implements<Protocol>(_ type: Protocol.Type, name: Resolver.Name? = nil) -> ResolverOptions<Service> {
-    registration.resolver?.register(type.self, name: name) { r, args in r.resolve(Service.self, args: args) as? Protocol }
+  public func implements<Protocol>(_ type: Protocol.Type) -> ResolverOptions<Service> {
+    registration.resolver?.register(type.self) { r in r.resolve(Service.self) as? Protocol }
     return self
   }
   
@@ -559,27 +332,6 @@ public struct ResolverOptions<Service> {
           return nil
         }
         block(resolver, service)
-        return service
-      }
-    }
-    return self
-  }
-  
-  /// Allows easy assignment of injected properties into resolved Service.
-  ///
-  /// - parameter block: Resolution block that also receives resolution arguments.
-  ///
-  /// - Returns: ResolverOptions instance that allows further customization of registered Service.
-  ///
-  @discardableResult
-  @MainActor
-  public func resolveProperties(_ block: @escaping ResolverFactoryMutatorArgumentsN<Service>) -> ResolverOptions<Service> {
-    registration.update { existingFactory in
-      return { (resolver, args) in
-        guard let service = existingFactory(resolver, args) else {
-          return nil
-        }
-        block(resolver, service, Resolver.Args(args))
         return service
       }
     }
@@ -612,14 +364,10 @@ public final class ResolverRegistration<Service> {
   
   fileprivate weak var resolver: Resolver?
   
-  public init(resolver: Resolver, key: Int, name: Resolver.Name?, factory: @escaping ResolverFactoryAnyArguments<Service>) {
+  public init(resolver: Resolver, key: Int, factory: @escaping ResolverFactoryAnyArguments<Service>) {
     self.resolver = resolver
     self.key = key
-    if let namedService = name {
-      self.cacheKey = String(key) + ":" + namedService.rawValue
-    } else {
-      self.cacheKey = String(key)
-    }
+    self.cacheKey = String(key)
     self.factory = factory
   }
   

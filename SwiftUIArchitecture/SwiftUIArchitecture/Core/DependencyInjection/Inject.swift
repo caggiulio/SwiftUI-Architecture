@@ -18,7 +18,6 @@ import SwiftUI
    Initializes the property wrapper, resolving the dependent service using `Resolver.root`.
    
    - Parameters:
-   - name: The optional name of the dependent service.
    - container: The optional Resolver container for dependency resolution.
    
    ### Usage Example:
@@ -35,18 +34,17 @@ import SwiftUI
    Initializes the property wrapper with optional name and container parameters for dependency resolution.
    
    - Parameters:
-   - name: The optional name of the dependent service.
    - container: The optional Resolver container for dependency resolution.
    
    ### Usage Example:
    
    ```swift
-   @Injected(name: "serviceName", container: myResolver)
+   @Injected(container: myResolver)
    var myService: MyService
    ```
    */
-  public init(name: Resolver.Name? = nil, container: Resolver? = nil) {
-    self.service = container?.resolve(Service.self, name: name) ?? Resolver.resolve(Service.self, name: name)
+  public init(container: Resolver? = nil) {
+    self.service = container?.resolve(Service.self) ?? Resolver.resolve(Service.self)
   }
   
   /// The wrapped value representing the injected service.
@@ -79,7 +77,6 @@ import SwiftUI
    Initializes the property wrapper, resolving the dependent service using `Resolver.optional`.
    
    - Parameters:
-    - name: The optional name of the dependent service.
     - container: The optional Resolver container for dependency resolution.
    
    ### Usage Example:
@@ -97,7 +94,6 @@ import SwiftUI
    Initializes the property wrapper with optional name and container parameters for dependency resolution.
    
    - Parameters:
-    - name: The optional name of the dependent service.
     - container: The optional Resolver container for dependency resolution.
    
    ### Usage Example:
@@ -108,8 +104,8 @@ import SwiftUI
    ```
    
    */
-  public init(name: Resolver.Name? = nil, container: Resolver? = nil) {
-    self.service = container?.optional(Service.self, name: name) ?? Resolver.optional(Service.self, name: name)
+  public init(container: Resolver? = nil) {
+    self.service = container?.optional(Service.self) ?? Resolver.optional(Service.self)
   }
   
   /// The wrapped optional value representing the injected service.
@@ -152,11 +148,10 @@ import SwiftUI
    ```
    
    - Parameters:
-    - name: The optional name of the dependent service.
     - container: The optional Resolver container for dependency resolution.
    */
-  public init(name: Resolver.Name? = nil, container: Resolver? = nil) {
-    self.service = container?.resolve(Service.self, name: name) ?? Resolver.resolve(Service.self, name: name)
+  public init(container: Resolver? = nil) {
+    self.service = container?.resolve(Service.self) ?? Resolver.resolve(Service.self)
   }
   
   /// The wrapped value representing the injected service.
