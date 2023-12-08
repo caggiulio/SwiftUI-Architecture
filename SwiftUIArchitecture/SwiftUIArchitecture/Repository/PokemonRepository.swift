@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import VenomInjector
 
 extension Repository {
   struct Pokemon {

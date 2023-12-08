@@ -3,6 +3,7 @@
 //
 
 import Foundation
+import VenomInjector
 
 extension Resolver: ResolverRegistering {
   public static func registerAllServices() {

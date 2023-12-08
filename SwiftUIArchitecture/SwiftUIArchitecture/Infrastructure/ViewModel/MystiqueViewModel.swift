@@ -4,6 +4,7 @@
 //
 
 import Combine
+import VenomInjector
 import SwiftUI
 
 open class MystiqueViewModel<Model: CustomModel>: ObservableObject {

@@ -8,6 +8,15 @@
         "branch" : "master",
         "revision" : "00d14c23ccccf7ff10c6a585dadf85ee30de3da4"
       }
+    },
+    {
+      "identity" : "venominjector",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/caggiulio/VenomInjector",
+      "state" : {
+        "branch" : "master",
+        "revision" : "03429002a6c06bbdeffaab9a727dfa5602e21e94"
+      }
     }
   ],
   "version" : 2
