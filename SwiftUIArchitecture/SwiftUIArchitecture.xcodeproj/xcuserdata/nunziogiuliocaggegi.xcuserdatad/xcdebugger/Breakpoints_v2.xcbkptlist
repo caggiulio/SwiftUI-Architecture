@@ -7,115 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "55AA1211-D61D-4C29-A230-DFB540DEB18B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SwiftUIArchitecture/Repository/PokemonRepository.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "getPokemon(identifier:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "55AA1211-D61D-4C29-A230-DFB540DEB18B - aa5614986745e5f6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for SwiftUIArchitecture.Repository.Pokemon.getPokemon(identifier: Swift.String) async throws -&gt; ()"
-                  moduleName = "SwiftUIArchitecture"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nunziogiuliocaggegi/Developer/SwiftUI-Architecture/SwiftUIArchitecture/SwiftUIArchitecture/Repository/PokemonRepository.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
-                  offsetFromSymbolStart = "120">
-               </Location>
-               <Location
-                  uuid = "55AA1211-D61D-4C29-A230-DFB540DEB18B - 569c934a34972737"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(2) await resume partial function for SwiftUIArchitecture.Repository.Pokemon.getPokemon(identifier: Swift.String) async throws -&gt; ()"
-                  moduleName = "SwiftUIArchitecture"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nunziogiuliocaggegi/Developer/SwiftUI-Architecture/SwiftUIArchitecture/SwiftUIArchitecture/Repository/PokemonRepository.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
-                  offsetFromSymbolStart = "60">
-               </Location>
-               <Location
-                  uuid = "55AA1211-D61D-4C29-A230-DFB540DEB18B - ed2e1982037f2074"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for SwiftUIArchitecture.Repository.Pokemon.getPokemon(identifier: Swift.String) async throws -&gt; ()"
-                  moduleName = "SwiftUIArchitecture"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nunziogiuliocaggegi/Developer/SwiftUI-Architecture/SwiftUIArchitecture/SwiftUIArchitecture/Repository/PokemonRepository.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
-                  offsetFromSymbolStart = "84">
-               </Location>
-               <Location
-                  uuid = "55AA1211-D61D-4C29-A230-DFB540DEB18B - 126a1b0131040e35"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(4) suspend resume partial function for SwiftUIArchitecture.Repository.Pokemon.getPokemon(identifier: Swift.String) async throws -&gt; ()"
-                  moduleName = "SwiftUIArchitecture"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nunziogiuliocaggegi/Developer/SwiftUI-Architecture/SwiftUIArchitecture/SwiftUIArchitecture/Repository/PokemonRepository.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
-                  offsetFromSymbolStart = "40">
-               </Location>
-               <Location
-                  uuid = "55AA1211-D61D-4C29-A230-DFB540DEB18B - 126a1b0131040e35"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(4) suspend resume partial function for SwiftUIArchitecture.Repository.Pokemon.getPokemon(identifier: Swift.String) async throws -&gt; ()"
-                  moduleName = "SwiftUIArchitecture"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nunziogiuliocaggegi/Developer/SwiftUI-Architecture/SwiftUIArchitecture/SwiftUIArchitecture/Repository/PokemonRepository.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
-                  offsetFromSymbolStart = "72">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "560CE91D-DB3D-4775-8952-E2B4B97077EA"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SwiftUIArchitecture/Repository/PokemonRepository.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "getPokemon(identifier:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "40166BC6-74D0-4E4D-A314-F5C2E905E51A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -123,8 +14,8 @@
             filePath = "SwiftUIArchitecture/UseCase/PokemonUseCase.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
             landmarkName = "execute()"
             landmarkType = "7">
             <Locations>

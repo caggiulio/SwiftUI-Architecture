@@ -16,12 +16,9 @@
 		4DB8CD862A34BE8C001FD9B8 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CD852A34BE8C001FD9B8 /* LocalState.swift */; };
 		4DB8CD8B2A34BEA7001FD9B8 /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CD892A34BEA7001FD9B8 /* ErrorManager.swift */; };
 		4DB8CD8C2A34BEA7001FD9B8 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CD8A2A34BEA7001FD9B8 /* CustomError.swift */; };
-		4DB8CD8F2A34BF0D001FD9B8 /* Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CD8D2A34BF0D001FD9B8 /* Inject.swift */; };
-		4DB8CD902A34BF0D001FD9B8 /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CD8E2A34BF0D001FD9B8 /* Resolver.swift */; };
 		4DB8CD942A34BF31001FD9B8 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CD922A34BF31001FD9B8 /* State.swift */; };
 		4DB8CD952A34BF31001FD9B8 /* StateContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CD932A34BF31001FD9B8 /* StateContainer.swift */; };
-		4DB8CD992A34BF6B001FD9B8 /* ArchitectureDependencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CD972A34BF6B001FD9B8 /* ArchitectureDependencyManager.swift */; };
-		4DB8CD9A2A34BF6B001FD9B8 /* DependencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CD982A34BF6B001FD9B8 /* DependencyManager.swift */; };
+		4DB8CD9A2A34BF6B001FD9B8 /* ResolverRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CD982A34BF6B001FD9B8 /* ResolverRegister.swift */; };
 		4DB8CD9E2A34BFD2001FD9B8 /* Normalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CD9D2A34BFD2001FD9B8 /* Normalizable.swift */; };
 		4DB8CDA62A34C027001FD9B8 /* CoordinatorLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CDA12A34C027001FD9B8 /* CoordinatorLink.swift */; };
 		4DB8CDA92A34C027001FD9B8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CDA52A34C027001FD9B8 /* Coordinator.swift */; };
@@ -72,6 +69,7 @@
 		4DB8CE192A360580001FD9B8 /* Home+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CE182A360580001FD9B8 /* Home+View.swift */; };
 		4DB8CE1B2A360589001FD9B8 /* Home+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CE1A2A360589001FD9B8 /* Home+ViewModel.swift */; };
 		4DB8CE1E2A360CA3001FD9B8 /* SplashModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CE1D2A360CA3001FD9B8 /* SplashModel.swift */; };
+		4DD37C0B2B2334120024E8A8 /* VenomInjector in Frameworks */ = {isa = PBXBuildFile; productRef = 4DD37C0A2B2334120024E8A8 /* VenomInjector */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,12 +102,9 @@
 		4DB8CD852A34BE8C001FD9B8 /* LocalState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
 		4DB8CD892A34BEA7001FD9B8 /* ErrorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
 		4DB8CD8A2A34BEA7001FD9B8 /* CustomError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
-		4DB8CD8D2A34BF0D001FD9B8 /* Inject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inject.swift; sourceTree = "<group>"; };
-		4DB8CD8E2A34BF0D001FD9B8 /* Resolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
 		4DB8CD922A34BF31001FD9B8 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		4DB8CD932A34BF31001FD9B8 /* StateContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateContainer.swift; sourceTree = "<group>"; };
-		4DB8CD972A34BF6B001FD9B8 /* ArchitectureDependencyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchitectureDependencyManager.swift; sourceTree = "<group>"; };
-		4DB8CD982A34BF6B001FD9B8 /* DependencyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencyManager.swift; sourceTree = "<group>"; };
+		4DB8CD982A34BF6B001FD9B8 /* ResolverRegister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResolverRegister.swift; sourceTree = "<group>"; };
 		4DB8CD9D2A34BFD2001FD9B8 /* Normalizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Normalizable.swift; sourceTree = "<group>"; };
 		4DB8CDA12A34C027001FD9B8 /* CoordinatorLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorLink.swift; sourceTree = "<group>"; };
 		4DB8CDA52A34C027001FD9B8 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -166,6 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DD37C0B2B2334120024E8A8 /* VenomInjector in Frameworks */,
 				4DB8CDC92A34C483001FD9B8 /* AloyNetworking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,9 +279,7 @@
 		4DB8CD912A34BF11001FD9B8 /* DependencyInjection */ = {
 			isa = PBXGroup;
 			children = (
-				4DB8CD9B2A34BFC4001FD9B8 /* DependencyManager */,
-				4DB8CD8D2A34BF0D001FD9B8 /* Inject.swift */,
-				4DB8CD8E2A34BF0D001FD9B8 /* Resolver.swift */,
+				4DB8CD9B2A34BFC4001FD9B8 /* ResolverRegister */,
 			);
 			path = DependencyInjection;
 			sourceTree = "<group>";
@@ -300,13 +294,12 @@
 			path = State;
 			sourceTree = "<group>";
 		};
-		4DB8CD9B2A34BFC4001FD9B8 /* DependencyManager */ = {
+		4DB8CD9B2A34BFC4001FD9B8 /* ResolverRegister */ = {
 			isa = PBXGroup;
 			children = (
-				4DB8CD972A34BF6B001FD9B8 /* ArchitectureDependencyManager.swift */,
-				4DB8CD982A34BF6B001FD9B8 /* DependencyManager.swift */,
+				4DB8CD982A34BF6B001FD9B8 /* ResolverRegister.swift */,
 			);
-			path = DependencyManager;
+			path = ResolverRegister;
 			sourceTree = "<group>";
 		};
 		4DB8CD9C2A34BFD2001FD9B8 /* Normalizable */ = {
@@ -518,6 +511,7 @@
 			name = SwiftUIArchitecture;
 			packageProductDependencies = (
 				4DB8CDC82A34C483001FD9B8 /* AloyNetworking */,
+				4DD37C0A2B2334120024E8A8 /* VenomInjector */,
 			);
 			productName = SwiftUIArchitecture;
 			productReference = 4DB8CD572A34BE66001FD9B8 /* SwiftUIArchitecture.app */;
@@ -593,6 +587,7 @@
 			mainGroup = 4DB8CD4E2A34BE66001FD9B8;
 			packageReferences = (
 				4DB8CDC72A34C483001FD9B8 /* XCRemoteSwiftPackageReference "AloyNetworking" */,
+				4DD37C072B2332EB0024E8A8 /* XCRemoteSwiftPackageReference "VenomInjector" */,
 			);
 			productRefGroup = 4DB8CD582A34BE66001FD9B8 /* Products */;
 			projectDirPath = "";
@@ -651,7 +646,6 @@
 				4DB8CDE42A34C706001FD9B8 /* StatsDataSource.swift in Sources */,
 				4DB8CDF52A34C721001FD9B8 /* Ability.swift in Sources */,
 				4DB8CDB82A34C1E8001FD9B8 /* BaseView.swift in Sources */,
-				4DB8CD8F2A34BF0D001FD9B8 /* Inject.swift in Sources */,
 				4DB8CE112A34EEBA001FD9B8 /* Splash+View.swift in Sources */,
 				4DB8CE132A34EECC001FD9B8 /* UI.swift in Sources */,
 				4DB8CDFC2A34C721001FD9B8 /* PKMNModel.swift in Sources */,
@@ -664,7 +658,6 @@
 				4DB8CDFE2A34C721001FD9B8 /* Stat.swift in Sources */,
 				4DB8CD9E2A34BFD2001FD9B8 /* Normalizable.swift in Sources */,
 				4DB8CDC52A34C39A001FD9B8 /* NetworkManager.swift in Sources */,
-				4DB8CD902A34BF0D001FD9B8 /* Resolver.swift in Sources */,
 				4DB8CDF42A34C721001FD9B8 /* Forms.swift in Sources */,
 				4DB8CDE52A34C706001FD9B8 /* AbilitiesDataSource.swift in Sources */,
 				4DB8CDB52A34C1C9001FD9B8 /* Extension+Binding.swift in Sources */,
@@ -690,10 +683,9 @@
 				4DB8CDCD2A34C5A4001FD9B8 /* NetworkWorker.swift in Sources */,
 				4DB8CE0E2A34EDC9001FD9B8 /* PokemonUseCase.swift in Sources */,
 				4DB8CD952A34BF31001FD9B8 /* StateContainer.swift in Sources */,
-				4DB8CD992A34BF6B001FD9B8 /* ArchitectureDependencyManager.swift in Sources */,
 				4DB8CDE22A34C706001FD9B8 /* PokemonDataSource.swift in Sources */,
 				4DB8CDE32A34C706001FD9B8 /* OfficialArtworkDataSource.swift in Sources */,
-				4DB8CD9A2A34BF6B001FD9B8 /* DependencyManager.swift in Sources */,
+				4DB8CD9A2A34BF6B001FD9B8 /* ResolverRegister.swift in Sources */,
 				4DB8CE092A34EA83001FD9B8 /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1041,6 +1033,14 @@
 				kind = branch;
 			};
 		};
+		4DD37C072B2332EB0024E8A8 /* XCRemoteSwiftPackageReference "VenomInjector" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/caggiulio/VenomInjector";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1048,6 +1048,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4DB8CDC72A34C483001FD9B8 /* XCRemoteSwiftPackageReference "AloyNetworking" */;
 			productName = AloyNetworking;
+		};
+		4DD37C0A2B2334120024E8A8 /* VenomInjector */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4DD37C072B2332EB0024E8A8 /* XCRemoteSwiftPackageReference "VenomInjector" */;
+			productName = VenomInjector;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

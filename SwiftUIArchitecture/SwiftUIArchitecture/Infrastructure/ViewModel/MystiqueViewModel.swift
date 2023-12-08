@@ -4,6 +4,7 @@
 //
 
 import Combine
+import VenomInjector
 import SwiftUI
 
 open class MystiqueViewModel<Model: CustomModel>: ObservableObject {
@@ -23,7 +24,8 @@ open class MystiqueViewModel<Model: CustomModel>: ObservableObject {
   @Injected var assembler: Assembler
   
   /// The coordinator of the app.
-  @ObservedObject var coordinator: Coordinator = Resolver.shared.resolve()
+  @InjectedObject
+  var coordinator: Coordinator
   
   /// The app state.
   @Injected var appState: StateContainer
@@ -217,7 +219,7 @@ open class MystiqueViewModel<Model: CustomModel>: ObservableObject {
   This function should be overridden in subclasses to customize the error handling behavior for specific view models.
 
   Parameters:
-  - error: An instance of the HBError enum that represents the error that occurred.
+  - error: An instance of the `CustomError` enum that represents the error that occurred.
 
   Usage:
   You can call this function whenever you need to handle an error in the app, typically in response to an error event that occurs in the app.
@@ -225,7 +227,7 @@ open class MystiqueViewModel<Model: CustomModel>: ObservableObject {
   Example:
   Here's an example of how you might use the handleError function to handle a network error that occurred in a specific view model:
 
-      override func handleError(error: HBError) {
+      override func handleError(error: CustomError) {
         print(error.localizedDescription)
       }
 

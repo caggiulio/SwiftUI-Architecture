@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import VenomInjector
 
 extension Repository {
-  struct Pokemon: Injectable {
+  struct Pokemon {
     /// The networking worker.
     @Injected private var networkingManager: NetworkManager
     

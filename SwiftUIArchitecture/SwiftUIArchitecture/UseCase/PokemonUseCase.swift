@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import VenomInjector
 
 extension UseCase {
   /// Get a Pokemon by his identifier.
