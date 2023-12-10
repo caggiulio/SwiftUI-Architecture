@@ -16,6 +16,7 @@ extension Resolver: ResolverRegistering {
         let networking = AloyNetworking(
           baseURL: "https://pokeapi.co/api/v2/", cachePolicy: .returnCacheDataElseLoad
         )
+        
         return networking
       }()
       
