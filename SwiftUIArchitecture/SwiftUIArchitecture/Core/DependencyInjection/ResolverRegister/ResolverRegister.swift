@@ -21,7 +21,7 @@ extension Resolver: ResolverRegistering {
       }()
       
       return NetworkManager(worker: NetworkWorker(networking: networking))
-    }
+    }.scope(.application)
     Resolver.register { Assembler() }.scope(.application)
   }
 }
