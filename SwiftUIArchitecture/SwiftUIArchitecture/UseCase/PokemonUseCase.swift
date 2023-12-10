@@ -12,7 +12,7 @@ extension UseCase {
   /// Get a Pokemon by his identifier.
   struct GetPokemonByIdentifier {
     /// The Pokemon repository.
-    @Injected private var pokemonRepository: Repository.Pokemon
+    @Injected private var pokemonRepository: PokemonRepositoryProtocol
     
     func execute() async throws {
       let identifier = Int.random(in: 1...150).formatted()

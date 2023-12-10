@@ -70,6 +70,7 @@
 		4DB8CE1B2A360589001FD9B8 /* Home+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CE1A2A360589001FD9B8 /* Home+ViewModel.swift */; };
 		4DB8CE1E2A360CA3001FD9B8 /* SplashModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CE1D2A360CA3001FD9B8 /* SplashModel.swift */; };
 		4DD37C0B2B2334120024E8A8 /* VenomInjector in Frameworks */ = {isa = PBXBuildFile; productRef = 4DD37C0A2B2334120024E8A8 /* VenomInjector */; };
+		4DD37C0D2B261D9F0024E8A8 /* PokemonRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD37C0C2B261D9F0024E8A8 /* PokemonRepositoryProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +155,7 @@
 		4DB8CE182A360580001FD9B8 /* Home+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home+View.swift"; sourceTree = "<group>"; };
 		4DB8CE1A2A360589001FD9B8 /* Home+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home+ViewModel.swift"; sourceTree = "<group>"; };
 		4DB8CE1D2A360CA3001FD9B8 /* SplashModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashModel.swift; sourceTree = "<group>"; };
+		4DD37C0C2B261D9F0024E8A8 /* PokemonRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonRepositoryProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -451,6 +453,7 @@
 			children = (
 				4DB8CE062A34EA74001FD9B8 /* PokemonRepository.swift */,
 				4DB8CE082A34EA83001FD9B8 /* Repository.swift */,
+				4DD37C0C2B261D9F0024E8A8 /* PokemonRepositoryProtocol.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -657,6 +660,7 @@
 				4DB8CDDF2A34C706001FD9B8 /* FormsDataSource.swift in Sources */,
 				4DB8CDFE2A34C721001FD9B8 /* Stat.swift in Sources */,
 				4DB8CD9E2A34BFD2001FD9B8 /* Normalizable.swift in Sources */,
+				4DD37C0D2B261D9F0024E8A8 /* PokemonRepositoryProtocol.swift in Sources */,
 				4DB8CDC52A34C39A001FD9B8 /* NetworkManager.swift in Sources */,
 				4DB8CDF42A34C721001FD9B8 /* Forms.swift in Sources */,
 				4DB8CDE52A34C706001FD9B8 /* AbilitiesDataSource.swift in Sources */,
