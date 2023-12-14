@@ -6,7 +6,6 @@
 //
 
 import AloyNetworking
-import VenomInjector
  
 /// The manager for the networking workers.
 struct NetworkManager {
