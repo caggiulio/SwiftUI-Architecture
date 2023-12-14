@@ -27,4 +27,3 @@ class Coordinator: ObservableObject {
     path.append(CoordinatorLink.home)
   }
 }
-
