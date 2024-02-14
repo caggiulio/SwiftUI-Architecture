@@ -23,7 +23,8 @@ struct SwiftUIArchitectureApp: App {
     WindowGroup {
       NavigationStack(path: $coordinator.path) {
         assembler.navigateTo(destination: .splash)
-          .navigationDestination(for: CoordinatorLink.self) { assembler.navigateTo(destination: $0) }
+          .navigationDestination(for: CoordinatorLink.self) { assembler.navigateTo(destination: $0)
+          }
       }
     }
   }
