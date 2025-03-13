@@ -6,15 +6,15 @@
 //
 
 import Foundation
-import VenomInjector
+import Factory
 
 extension Repository {
   struct Pokemon: PokemonRepositoryProtocol {
     /// The networking worker.
-    @Injected private var networkingManager: NetworkManager
+    @Injected(\.networkManager) private var networkingManager: NetworkManager
     
     /// The `AppState`.
-    @Injected private var stateContainer: StateContainer
+    @Injected(\.stateContainer) private var stateContainer: StateContainer
     
     /// Get the information of a Pokemon by his identifier.
     func getPokemon(identifier: String) async throws {

@@ -1,4 +1,5 @@
 {
+  "originHash" : "3875d2fe31fa1ca80003e4e57eded91710279410c39c1b5ce53f248be8888c21",
   "pins" : [
     {
       "identity" : "aloynetworking",
@@ -10,14 +11,14 @@
       }
     },
     {
-      "identity" : "venominjector",
+      "identity" : "factory",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/caggiulio/VenomInjector",
+      "location" : "https://github.com/hmlongco/Factory.git",
       "state" : {
-        "branch" : "master",
-        "revision" : "03429002a6c06bbdeffaab9a727dfa5602e21e94"
+        "revision" : "fb04a8918848e413d3921d346a23bae7f81088d9",
+        "version" : "2.4.3"
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

@@ -25,7 +25,6 @@
 		4DB8CDAD2A34C065001FD9B8 /* MystiqueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CDAC2A34C065001FD9B8 /* MystiqueViewModel.swift */; };
 		4DB8CDAF2A34C0AE001FD9B8 /* CustomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CDAE2A34C0AE001FD9B8 /* CustomModel.swift */; };
 		4DB8CDB22A34C0EC001FD9B8 /* Assembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CDB12A34C0EC001FD9B8 /* Assembler.swift */; };
-		4DB8CDB52A34C1C9001FD9B8 /* Extension+Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CDB42A34C1C9001FD9B8 /* Extension+Binding.swift */; };
 		4DB8CDB82A34C1E8001FD9B8 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CDB72A34C1E8001FD9B8 /* BaseView.swift */; };
 		4DB8CDBB2A34C21C001FD9B8 /* HandleLocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CDBA2A34C21C001FD9B8 /* HandleLocalState.swift */; };
 		4DB8CDBD2A34C27B001FD9B8 /* Interaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CDBC2A34C27B001FD9B8 /* Interaction.swift */; };
@@ -69,8 +68,8 @@
 		4DB8CE192A360580001FD9B8 /* Home+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CE182A360580001FD9B8 /* Home+View.swift */; };
 		4DB8CE1B2A360589001FD9B8 /* Home+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CE1A2A360589001FD9B8 /* Home+ViewModel.swift */; };
 		4DB8CE1E2A360CA3001FD9B8 /* SplashModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CE1D2A360CA3001FD9B8 /* SplashModel.swift */; };
-		4DD37C0B2B2334120024E8A8 /* VenomInjector in Frameworks */ = {isa = PBXBuildFile; productRef = 4DD37C0A2B2334120024E8A8 /* VenomInjector */; };
 		4DD37C0D2B261D9F0024E8A8 /* PokemonRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD37C0C2B261D9F0024E8A8 /* PokemonRepositoryProtocol.swift */; };
+		9BD21C942D82D2F700636B39 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 9BD21C932D82D2F700636B39 /* Factory */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,7 +91,7 @@
 
 /* Begin PBXFileReference section */
 		4DB8CD572A34BE66001FD9B8 /* SwiftUIArchitecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIArchitecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4DB8CD5A2A34BE66001FD9B8 /* SwiftUIArchitectureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIArchitectureApp.swift; sourceTree = "<group>"; };
+		4DB8CD5A2A34BE66001FD9B8 /* SwiftUIArchitectureApp.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SwiftUIArchitectureApp.swift; sourceTree = "<group>"; tabWidth = 2; };
 		4DB8CD5E2A34BE68001FD9B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DB8CD612A34BE68001FD9B8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4DB8CD672A34BE69001FD9B8 /* SwiftUIArchitectureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUIArchitectureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,14 +104,13 @@
 		4DB8CD8A2A34BEA7001FD9B8 /* CustomError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		4DB8CD922A34BF31001FD9B8 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		4DB8CD932A34BF31001FD9B8 /* StateContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateContainer.swift; sourceTree = "<group>"; };
-		4DB8CD982A34BF6B001FD9B8 /* ResolverRegister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResolverRegister.swift; sourceTree = "<group>"; };
+		4DB8CD982A34BF6B001FD9B8 /* ResolverRegister.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ResolverRegister.swift; sourceTree = "<group>"; tabWidth = 2; };
 		4DB8CD9D2A34BFD2001FD9B8 /* Normalizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Normalizable.swift; sourceTree = "<group>"; };
 		4DB8CDA12A34C027001FD9B8 /* CoordinatorLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorLink.swift; sourceTree = "<group>"; };
 		4DB8CDA52A34C027001FD9B8 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		4DB8CDAC2A34C065001FD9B8 /* MystiqueViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MystiqueViewModel.swift; sourceTree = "<group>"; };
+		4DB8CDAC2A34C065001FD9B8 /* MystiqueViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = MystiqueViewModel.swift; sourceTree = "<group>"; tabWidth = 2; };
 		4DB8CDAE2A34C0AE001FD9B8 /* CustomModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomModel.swift; sourceTree = "<group>"; };
 		4DB8CDB12A34C0EC001FD9B8 /* Assembler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assembler.swift; sourceTree = "<group>"; };
-		4DB8CDB42A34C1C9001FD9B8 /* Extension+Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Binding.swift"; sourceTree = "<group>"; };
 		4DB8CDB72A34C1E8001FD9B8 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		4DB8CDBA2A34C21C001FD9B8 /* HandleLocalState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandleLocalState.swift; sourceTree = "<group>"; };
 		4DB8CDBC2A34C27B001FD9B8 /* Interaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interaction.swift; sourceTree = "<group>"; };
@@ -145,15 +143,15 @@
 		4DB8CDF22A34C721001FD9B8 /* Stat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stat.swift; sourceTree = "<group>"; };
 		4DB8CDF32A34C721001FD9B8 /* PokemonsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonsList.swift; sourceTree = "<group>"; };
 		4DB8CE032A34C862001FD9B8 /* PokemonDetail+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PokemonDetail+State.swift"; sourceTree = "<group>"; };
-		4DB8CE062A34EA74001FD9B8 /* PokemonRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonRepository.swift; sourceTree = "<group>"; };
+		4DB8CE062A34EA74001FD9B8 /* PokemonRepository.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = PokemonRepository.swift; sourceTree = "<group>"; tabWidth = 2; };
 		4DB8CE082A34EA83001FD9B8 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		4DB8CE0B2A34ED26001FD9B8 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		4DB8CE0D2A34EDC9001FD9B8 /* PokemonUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonUseCase.swift; sourceTree = "<group>"; };
 		4DB8CE102A34EEBA001FD9B8 /* Splash+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Splash+View.swift"; sourceTree = "<group>"; };
 		4DB8CE122A34EECC001FD9B8 /* UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
-		4DB8CE152A34EF51001FD9B8 /* Splash+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Splash+ViewModel.swift"; sourceTree = "<group>"; };
+		4DB8CE152A34EF51001FD9B8 /* Splash+ViewModel.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = "Splash+ViewModel.swift"; sourceTree = "<group>"; tabWidth = 2; };
 		4DB8CE182A360580001FD9B8 /* Home+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home+View.swift"; sourceTree = "<group>"; };
-		4DB8CE1A2A360589001FD9B8 /* Home+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home+ViewModel.swift"; sourceTree = "<group>"; };
+		4DB8CE1A2A360589001FD9B8 /* Home+ViewModel.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = "Home+ViewModel.swift"; sourceTree = "<group>"; tabWidth = 2; };
 		4DB8CE1D2A360CA3001FD9B8 /* SplashModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashModel.swift; sourceTree = "<group>"; };
 		4DD37C0C2B261D9F0024E8A8 /* PokemonRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonRepositoryProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,8 +161,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DD37C0B2B2334120024E8A8 /* VenomInjector in Frameworks */,
 				4DB8CDC92A34C483001FD9B8 /* AloyNetworking in Frameworks */,
+				9BD21C942D82D2F700636B39 /* Factory in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,7 +360,6 @@
 		4DB8CDB62A34C1CE001FD9B8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				4DB8CDB42A34C1C9001FD9B8 /* Extension+Binding.swift */,
 				4DB8CDC22A34C313001FD9B8 /* Extension+Array.swift */,
 			);
 			path = Extensions;
@@ -514,7 +511,7 @@
 			name = SwiftUIArchitecture;
 			packageProductDependencies = (
 				4DB8CDC82A34C483001FD9B8 /* AloyNetworking */,
-				4DD37C0A2B2334120024E8A8 /* VenomInjector */,
+				9BD21C932D82D2F700636B39 /* Factory */,
 			);
 			productName = SwiftUIArchitecture;
 			productReference = 4DB8CD572A34BE66001FD9B8 /* SwiftUIArchitecture.app */;
@@ -590,7 +587,7 @@
 			mainGroup = 4DB8CD4E2A34BE66001FD9B8;
 			packageReferences = (
 				4DB8CDC72A34C483001FD9B8 /* XCRemoteSwiftPackageReference "AloyNetworking" */,
-				4DD37C072B2332EB0024E8A8 /* XCRemoteSwiftPackageReference "VenomInjector" */,
+				9BD21C922D82D2F700636B39 /* XCRemoteSwiftPackageReference "Factory" */,
 			);
 			productRefGroup = 4DB8CD582A34BE66001FD9B8 /* Products */;
 			projectDirPath = "";
@@ -664,7 +661,6 @@
 				4DB8CDC52A34C39A001FD9B8 /* NetworkManager.swift in Sources */,
 				4DB8CDF42A34C721001FD9B8 /* Forms.swift in Sources */,
 				4DB8CDE52A34C706001FD9B8 /* AbilitiesDataSource.swift in Sources */,
-				4DB8CDB52A34C1C9001FD9B8 /* Extension+Binding.swift in Sources */,
 				4DB8CDE62A34C706001FD9B8 /* SpritesDataSource.swift in Sources */,
 				4DB8CDA62A34C027001FD9B8 /* CoordinatorLink.swift in Sources */,
 				4DB8CDDD2A34C706001FD9B8 /* SpeciesDataSource.swift in Sources */,
@@ -1037,12 +1033,12 @@
 				kind = branch;
 			};
 		};
-		4DD37C072B2332EB0024E8A8 /* XCRemoteSwiftPackageReference "VenomInjector" */ = {
+		9BD21C922D82D2F700636B39 /* XCRemoteSwiftPackageReference "Factory" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/caggiulio/VenomInjector";
+			repositoryURL = "https://github.com/hmlongco/Factory.git";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1053,10 +1049,10 @@
 			package = 4DB8CDC72A34C483001FD9B8 /* XCRemoteSwiftPackageReference "AloyNetworking" */;
 			productName = AloyNetworking;
 		};
-		4DD37C0A2B2334120024E8A8 /* VenomInjector */ = {
+		9BD21C932D82D2F700636B39 /* Factory */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 4DD37C072B2332EB0024E8A8 /* XCRemoteSwiftPackageReference "VenomInjector" */;
-			productName = VenomInjector;
+			package = 9BD21C922D82D2F700636B39 /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = Factory;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

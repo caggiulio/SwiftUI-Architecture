@@ -41,8 +41,13 @@ extension UI.Funnel.Home {
     // MARK: - Functions
     
     /// The user taps on random button.
-    func didTapRandomButton() async throws {
-      try await processAndForget(UseCase.GetPokemonByIdentifier().execute)
+    @MainActor
+    func didTapRandomButton() {
+      Task {
+        try await processAndForget {
+          try await UseCase.GetPokemonByIdentifier().execute()
+        }
+      }
     }
   }
 }

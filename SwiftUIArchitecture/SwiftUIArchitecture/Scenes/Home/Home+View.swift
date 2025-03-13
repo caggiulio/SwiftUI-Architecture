@@ -37,9 +37,7 @@ extension UI.Funnel.Home {
             .fontWeight(.black)
                     
           Button("Random") {
-            Task {
-              try await viewModel.didTapRandomButton()
-            }
+            viewModel.didTapRandomButton()
           }
           .padding(.top, 150)
           .buttonStyle(.borderedProminent)

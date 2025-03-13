@@ -3,15 +3,27 @@
 //
 
 import AloyNetworking
+import Factory
 import Foundation
-import VenomInjector
 
-extension Resolver: ResolverRegistering {
-  public static func registerAllServices() {
-    Resolver.register { Repository.Pokemon() }.scope(.application).implements(PokemonRepositoryProtocol.self)
-    Resolver.register { StateContainer() }.scope(.application)
-    Resolver.register { Coordinator() }.scope(.application)
-    Resolver.register(NetworkManager.self) {
+extension Container {
+  var pokemonRepository: Factory<PokemonRepositoryProtocol> {
+    self { Repository.Pokemon() }
+    .scope(.cached)
+  }
+  
+  var stateContainer: Factory<StateContainer> {
+    self { StateContainer() }
+    .scope(.cached)
+  }
+  
+  var coordinator: Factory<Coordinator> {
+    self { Coordinator() }
+    .scope(.cached)
+  }
+
+  var networkManager: Factory<NetworkManager> {
+    self {
       let networking: AloyNetworkingProtocol = {
         let networking = AloyNetworking(
           baseURL: "https://pokeapi.co/api/v2/", cachePolicy: .returnCacheDataElseLoad
@@ -21,7 +33,12 @@ extension Resolver: ResolverRegistering {
       }()
       
       return NetworkManager(worker: NetworkWorker(networking: networking))
-    }.scope(.application)
-    Resolver.register { Assembler() }.scope(.application)
+    }
+    .scope(.cached)
+  }
+
+  var assembler: Factory<Assembler> {
+    self { Assembler() }
+    .scope(.cached)
   }
 }

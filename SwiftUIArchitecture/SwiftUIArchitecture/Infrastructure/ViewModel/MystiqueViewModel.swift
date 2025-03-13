@@ -4,7 +4,7 @@
 //
 
 import Combine
-import VenomInjector
+import Factory
 import SwiftUI
 
 open class MystiqueViewModel<Model: CustomModel>: ObservableObject {
@@ -20,15 +20,8 @@ open class MystiqueViewModel<Model: CustomModel>: ObservableObject {
   /// Wheter the view has the default background. `true` by default.
   @Published var hasDefaultBackground: Bool = true
   
-  /// The assembler of the app.
-  @Injected var assembler: Assembler
-  
-  /// The coordinator of the app.
-  @InjectedObject
-  var coordinator: Coordinator
-  
   /// The app state.
-  @Injected var appState: StateContainer
+  @Injected(\.stateContainer) var appState: StateContainer
     
   /// The cancellables set used for store `Combine` values.
   private var cancellables = Set<AnyCancellable>()
