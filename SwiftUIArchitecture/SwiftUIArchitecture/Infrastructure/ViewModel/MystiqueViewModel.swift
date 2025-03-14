@@ -40,42 +40,6 @@ open class MystiqueViewModel<Model: CustomModel>: ObservableObject {
   
   // MARK: - Methods
   
-   /**
-    Executes custom logic when a SwiftUI view appears.
-
-    This function is called when a SwiftUI view appears on screen, and it is marked with the `async` and `throws` keywords to indicate that it can perform asynchronous and potentially error-prone operations. The function should execute any custom logic that is required when the view appears, which may include fetching data, performing animations, or updating the UI.
-
-    This function should be overridden in subclasses to provide custom behavior for specific views.
-
-    - Throws: This function may throw an error if an error occurs during its execution. Subclasses should document the types of errors that this function may throw, and callers should be prepared to handle these errors.
-
-    Usage:
-    You can call this function whenever you need to perform custom logic when a SwiftUI view appears, typically in the body of the view that is being displayed.
-
-    Example:
-    Here's an example of how you might use the didAppear function to fetch data from a remote server when a specific SwiftUI view appears:
-    ```
-      struct MyView: View {
-        var body: some View {
-          Text("Hello, World!")
-            .onAppear {
-               do {
-                 try await didAppear()
-               } catch {
-                 // Handle the error.
-               }
-            }
-          }
-        }
-   ```
-    - Note: that this is just an example, and the actual usage of the `didAppear` function may vary depending on the specific requirements of your app.
-
-  Subclassing:
-  Subclasses should override this function to provide custom behavior for specific views. The default implementation of this function does nothing.
-  */
-  @MainActor
-  func didAppear() async throws {}
-  
   /**
   Cancels all the cancellables stored in the array.
 
@@ -98,33 +62,5 @@ open class MystiqueViewModel<Model: CustomModel>: ObservableObject {
       element.cancel()
     }
   }
-  
-  /**
-  Handles an error in the app.
-
-  This function is called whenever an error occurs in the app, and it takes a single argument, error, that represents the error that occurred. The function should handle the error in an appropriate way, which may include logging the error, displaying an error message to the user, or taking other actions to recover from the error.
-
-  This function should be overridden in subclasses to customize the error handling behavior for specific view models.
-
-  Parameters:
-  - error: An instance of the `CustomError` enum that represents the error that occurred.
-
-  Usage:
-  You can call this function whenever you need to handle an error in the app, typically in response to an error event that occurs in the app.
-
-  Example:
-  Here's an example of how you might use the handleError function to handle a network error that occurred in a specific view model:
-
-      override func handleError(error: CustomError) {
-        print(error.localizedDescription)
-      }
-
-  Note that this is just an example, and the actual usage of the handleError function may vary depending on the specific requirements of your app.
-
-  Subclassing:
-  Subclasses should override this function to provide custom error handling behavior for specific view models. The default implementation of this function does nothing.
-  */
-  @MainActor
-  open func handleError(error: CustomError) {}
 }
 

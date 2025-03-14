@@ -26,12 +26,7 @@ extension UI.Funnel.Splash {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .edgesIgnoringSafeArea(.all)
       }
-      .onAppear {
-        Task {
-          try await viewModel.didAppear()
-        }
-      }
-      .loader(isShowing: viewModel.localState.isLoading)
+      .onAppear(perform: viewModel.didAppear)
     }
   }
 }

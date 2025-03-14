@@ -16,7 +16,8 @@ extension UI.Funnel.Splash {
     
     // MARK: - DidAppear
     
-    override func didAppear() async throws {
+    @MainActor
+    func didAppear() {
       localState = .success(
         SplashModel(
           imageName: "logo",
@@ -24,8 +25,10 @@ extension UI.Funnel.Splash {
         )
       )
       
-      try await UseCase.GetPokemonByIdentifier().execute()
-      self.coordinator.home()
+      Task {
+        try await UseCase.GetPokemonByIdentifier().execute()
+        self.coordinator.home()
+      }
     }
   }
 }
