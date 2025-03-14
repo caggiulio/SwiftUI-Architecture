@@ -1,25 +1,24 @@
 //
-//  MystiqueViewModel.swift
+//  StaterViewModel.swift
+//  SwiftUIArchitecture
 //
+//  Created by Giulio Caggegi on 14/03/25.
 //
+
 
 import Combine
 import Factory
 import SwiftUI
 
-open class MystiqueViewModel<Model: CustomModel>: ObservableObject {
+open class StaterViewModel: ObservableObject {
   
   // MARK: - Computed Properties
   
-  /// The loading state with his related `Model`.
-  @Published var localState: LocalState<Model, CustomError> = .idle
-  
-  /// The last value of the `Model` if exist. This variable is assigned when a `LocalState`
-  /// become `.success`.
-  @Published private var model: Model?
-  
   /// Wheter the view has the default background. `true` by default.
   @Published var hasDefaultBackground: Bool = true
+  
+  /// The app state.
+  @Injected(\.stateContainer) var appState: StateContainer
     
   /// The cancellables set used for store `Combine` values.
   private var cancellables = Set<AnyCancellable>()
@@ -28,12 +27,15 @@ open class MystiqueViewModel<Model: CustomModel>: ObservableObject {
   
   /// Initializes the view model with default values and sets up subscriptions to the local state and app state.
   init() {
-    self.$localState
+    self.appState.$state
+      .receive(on: DispatchQueue.main)
       .sink { [weak self] state in
-        guard let newValue = state.value else {
-          return
-        }
-        self?.model = newValue
+        self?.update(state: state)
+        
+        // TODO: Implements the changes
+        
+        /// In order to send a signal everytime the state changes.
+        //self?.objectWillChange.send()
       }
       .store(in: &cancellables)
   }
@@ -126,5 +128,34 @@ open class MystiqueViewModel<Model: CustomModel>: ObservableObject {
   */
   @MainActor
   open func handleError(error: CustomError) {}
+
+   /**
+   Updates the app state based on the provided input state.
+
+   This function is called whenever the app state changes, and it takes a single argument, state, that represents the new state of the app. The function should update the app's internal state based on the input state, which may include changes to data, user interface, or other app components.
+
+   This function should be overridden in subclasses to customize the behavior of the app when the state changes.
+
+   - Parameters:
+     - state: An instance of the AppState struct that represents the new state of the app.
+
+   - Throws:
+     This function may throw an error if an error occurs during its execution. Subclasses should document the types of errors that this function may throw, and callers should be prepared to handle these errors.
+
+   - Usage:
+     You can call this function whenever you need to update the app state, typically in response to user input or other events that affect the app's behavior.
+
+   - Example:
+     Here's an example of how you might use the update function to update the app's internal state based on a change in the user's selection of a color:
+
+         let newState = AppState(selectedColor: .red)
+         update(state: newState)
+
+     Note that this is just an example, and the actual usage of the update function may vary depending on the specific requirements of your app.
+
+   - Subclassing:
+     Subclasses should override this function to provide custom behavior when the app state changes. The default implementation of this function does nothing.
+   */
+  open func update(state: AppState) {}
 }
 

@@ -7,4 +7,4 @@
 
 import Foundation
 
-struct Empty: PKMNModel {}
+struct Empty: Equatable {}

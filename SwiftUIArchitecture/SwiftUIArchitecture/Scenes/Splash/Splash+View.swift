@@ -18,18 +18,20 @@ extension UI.Funnel.Splash {
     // MARK: - View
     
     var body: some SwiftUI.View {
-      MystiqueView(viewModel: viewModel) {
+      MystiqueView(localState: viewModel.localState) { splashModel in
         ZStack {
-          if let model = viewModel.model {
-            Image(model.imageName)
-              .frame(width: model.imageSize.width, height: model.imageSize.height)
-          } else {
-            EmptyView()
-          }
+          Image(splashModel.imageName)
+            .frame(width: splashModel.imageSize.width, height: splashModel.imageSize.height)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .edgesIgnoringSafeArea(.all)
       }
+      .onAppear {
+        Task {
+          try await viewModel.didAppear()
+        }
+      }
+      .loader(isShowing: viewModel.localState.isLoading)
     }
   }
 }

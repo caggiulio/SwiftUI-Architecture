@@ -24,10 +24,8 @@ extension UI.Funnel.Splash {
         )
       )
       
-      try await processAndForget {
-        try await UseCase.GetPokemonByIdentifier().execute()
-        self.coordinator.home()
-      }
+      try await UseCase.GetPokemonByIdentifier().execute()
+      self.coordinator.home()
     }
   }
 }

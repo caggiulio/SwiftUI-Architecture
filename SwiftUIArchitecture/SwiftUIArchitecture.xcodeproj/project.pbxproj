@@ -26,7 +26,6 @@
 		4DB8CDAF2A34C0AE001FD9B8 /* CustomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CDAE2A34C0AE001FD9B8 /* CustomModel.swift */; };
 		4DB8CDB22A34C0EC001FD9B8 /* Assembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CDB12A34C0EC001FD9B8 /* Assembler.swift */; };
 		4DB8CDB82A34C1E8001FD9B8 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CDB72A34C1E8001FD9B8 /* BaseView.swift */; };
-		4DB8CDBB2A34C21C001FD9B8 /* HandleLocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CDBA2A34C21C001FD9B8 /* HandleLocalState.swift */; };
 		4DB8CDBD2A34C27B001FD9B8 /* Interaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CDBC2A34C27B001FD9B8 /* Interaction.swift */; };
 		4DB8CDC02A34C2A4001FD9B8 /* CustomPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CDBF2A34C2A4001FD9B8 /* CustomPopupView.swift */; };
 		4DB8CDC32A34C313001FD9B8 /* Extension+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CDC22A34C313001FD9B8 /* Extension+Array.swift */; };
@@ -70,6 +69,8 @@
 		4DB8CE1E2A360CA3001FD9B8 /* SplashModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CE1D2A360CA3001FD9B8 /* SplashModel.swift */; };
 		4DD37C0D2B261D9F0024E8A8 /* PokemonRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD37C0C2B261D9F0024E8A8 /* PokemonRepositoryProtocol.swift */; };
 		9BD21C942D82D2F700636B39 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 9BD21C932D82D2F700636B39 /* Factory */; };
+		9BD21C962D8422B700636B39 /* StaterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD21C952D8422B700636B39 /* StaterViewModel.swift */; };
+		9BD21C982D842A3000636B39 /* LoaderModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD21C972D842A3000636B39 /* LoaderModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,7 +113,6 @@
 		4DB8CDAE2A34C0AE001FD9B8 /* CustomModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomModel.swift; sourceTree = "<group>"; };
 		4DB8CDB12A34C0EC001FD9B8 /* Assembler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assembler.swift; sourceTree = "<group>"; };
 		4DB8CDB72A34C1E8001FD9B8 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
-		4DB8CDBA2A34C21C001FD9B8 /* HandleLocalState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandleLocalState.swift; sourceTree = "<group>"; };
 		4DB8CDBC2A34C27B001FD9B8 /* Interaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interaction.swift; sourceTree = "<group>"; };
 		4DB8CDBF2A34C2A4001FD9B8 /* CustomPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPopupView.swift; sourceTree = "<group>"; };
 		4DB8CDC22A34C313001FD9B8 /* Extension+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Array.swift"; sourceTree = "<group>"; };
@@ -147,13 +147,15 @@
 		4DB8CE082A34EA83001FD9B8 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		4DB8CE0B2A34ED26001FD9B8 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		4DB8CE0D2A34EDC9001FD9B8 /* PokemonUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonUseCase.swift; sourceTree = "<group>"; };
-		4DB8CE102A34EEBA001FD9B8 /* Splash+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Splash+View.swift"; sourceTree = "<group>"; };
+		4DB8CE102A34EEBA001FD9B8 /* Splash+View.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = "Splash+View.swift"; sourceTree = "<group>"; tabWidth = 2; };
 		4DB8CE122A34EECC001FD9B8 /* UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
 		4DB8CE152A34EF51001FD9B8 /* Splash+ViewModel.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = "Splash+ViewModel.swift"; sourceTree = "<group>"; tabWidth = 2; };
-		4DB8CE182A360580001FD9B8 /* Home+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home+View.swift"; sourceTree = "<group>"; };
+		4DB8CE182A360580001FD9B8 /* Home+View.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = "Home+View.swift"; sourceTree = "<group>"; tabWidth = 2; };
 		4DB8CE1A2A360589001FD9B8 /* Home+ViewModel.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = "Home+ViewModel.swift"; sourceTree = "<group>"; tabWidth = 2; };
 		4DB8CE1D2A360CA3001FD9B8 /* SplashModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashModel.swift; sourceTree = "<group>"; };
 		4DD37C0C2B261D9F0024E8A8 /* PokemonRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonRepositoryProtocol.swift; sourceTree = "<group>"; };
+		9BD21C952D8422B700636B39 /* StaterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaterViewModel.swift; sourceTree = "<group>"; };
+		9BD21C972D842A3000636B39 /* LoaderModifier.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = LoaderModifier.swift; sourceTree = "<group>"; tabWidth = 2; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,7 +251,6 @@
 		4DB8CD842A34BE8C001FD9B8 /* LocalState */ = {
 			isa = PBXGroup;
 			children = (
-				4DB8CDBA2A34C21C001FD9B8 /* HandleLocalState.swift */,
 				4DB8CD852A34BE8C001FD9B8 /* LocalState.swift */,
 			);
 			path = LocalState;
@@ -322,6 +323,7 @@
 		4DB8CDAA2A34C02C001FD9B8 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				9BD21C992D842A3900636B39 /* Loader */,
 				4DB8CDC12A34C2A7001FD9B8 /* CustomViews */,
 				4DB8CDBE2A34C27F001FD9B8 /* Interaction */,
 				4DB8CDB92A34C1EA001FD9B8 /* BaseView */,
@@ -336,6 +338,7 @@
 		4DB8CDAB2A34C065001FD9B8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				9BD21C952D8422B700636B39 /* StaterViewModel.swift */,
 				4DB8CDAC2A34C065001FD9B8 /* MystiqueViewModel.swift */,
 			);
 			path = ViewModel;
@@ -493,6 +496,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		9BD21C992D842A3900636B39 /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				9BD21C972D842A3000636B39 /* LoaderModifier.swift */,
+			);
+			path = Loader;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -634,11 +645,12 @@
 				4DB8CDA92A34C027001FD9B8 /* Coordinator.swift in Sources */,
 				4DB8CDC02A34C2A4001FD9B8 /* CustomPopupView.swift in Sources */,
 				4DB8CDC32A34C313001FD9B8 /* Extension+Array.swift in Sources */,
+				9BD21C962D8422B700636B39 /* StaterViewModel.swift in Sources */,
 				4DB8CE0C2A34ED26001FD9B8 /* UseCase.swift in Sources */,
+				9BD21C982D842A3000636B39 /* LoaderModifier.swift in Sources */,
 				4DB8CDDC2A34C706001FD9B8 /* PokemonListItemDataSource.swift in Sources */,
 				4DB8CDAD2A34C065001FD9B8 /* MystiqueViewModel.swift in Sources */,
 				4DB8CD8C2A34BEA7001FD9B8 /* CustomError.swift in Sources */,
-				4DB8CDBB2A34C21C001FD9B8 /* HandleLocalState.swift in Sources */,
 				4DB8CE162A34EF51001FD9B8 /* Splash+ViewModel.swift in Sources */,
 				4DB8CDFB2A34C721001FD9B8 /* Pokemon.swift in Sources */,
 				4DB8CDB22A34C0EC001FD9B8 /* Assembler.swift in Sources */,
@@ -855,6 +867,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -889,6 +902,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

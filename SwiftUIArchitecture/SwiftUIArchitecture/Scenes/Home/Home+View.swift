@@ -18,10 +18,9 @@ extension UI.Funnel.Home {
     // MARK: - View
     
     var body: some SwiftUI.View {
-      MystiqueView(viewModel: viewModel) {
-        VStack {
-          AsyncImage(url: viewModel.imageURL) { phase in
-            switch phase {
+      VStack {
+        AsyncImage(url: viewModel.imageURL) { phase in
+          switch phase {
             case .success(let image):
               image
                 .resizable()
@@ -29,22 +28,20 @@ extension UI.Funnel.Home {
               
             default:
               Image("logo")
-            }
           }
-          
-          Text(viewModel.name)
-            .font(.title2)
-            .fontWeight(.black)
-                    
-          Button("Random") {
-            viewModel.didTapRandomButton()
-          }
+        }
+        
+        Text(viewModel.name)
+          .font(.title2)
+          .fontWeight(.black)
+        
+        Button("Random", action: viewModel.didTapRandomButton)
           .padding(.top, 150)
           .buttonStyle(.borderedProminent)
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .edgesIgnoringSafeArea(.all)
       }
+      .loader(isShowing: viewModel.localState.isLoading)
+      .frame(maxWidth: .infinity, maxHeight: .infinity)
+      .edgesIgnoringSafeArea(.all)
       .navigationBarHidden(true)
     }
   }

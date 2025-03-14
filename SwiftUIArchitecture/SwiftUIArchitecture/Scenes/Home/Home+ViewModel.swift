@@ -8,9 +8,12 @@
 import Foundation
 
 extension UI.Funnel.Home {
-  class ViewModel: MystiqueViewModel<EmptyModel> {
+  class ViewModel: StaterViewModel {
     
     // MARK: - Stored Properties
+    
+    /// The local state of the view model.
+    @Published private(set) var localState: LocalState<Empty, Never> = .idle
     
     /// The selected Pokemon.
     @Published private var pokemon: Pokemon?
@@ -36,6 +39,7 @@ extension UI.Funnel.Home {
     
     override func update(state: AppState) {
       pokemon = appState.state.pokemonDetail.selectedPokemon
+      localState = .success
     }
     
     // MARK: - Functions
@@ -43,10 +47,9 @@ extension UI.Funnel.Home {
     /// The user taps on random button.
     @MainActor
     func didTapRandomButton() {
+      localState = .loading
       Task {
-        try await processAndForget {
-          try await UseCase.GetPokemonByIdentifier().execute()
-        }
+        try await UseCase.GetPokemonByIdentifier().execute()
       }
     }
   }
