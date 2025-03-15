@@ -9,35 +9,31 @@ import Foundation
 extension Container {
   var pokemonRepository: Factory<PokemonRepositoryProtocol> {
     self { Repository.Pokemon() }
-    .scope(.cached)
+      .scope(.cached)
   }
   
   var stateContainer: Factory<StateContainer> {
     self { StateContainer() }
-    .scope(.cached)
+      .scope(.cached)
   }
   
   var coordinator: Factory<Coordinator> {
     self { Coordinator() }
-    .scope(.cached)
+      .scope(.cached)
   }
   
   var networking: Factory<Networking> {
-    self {
-      Networking()
-    }
-    .scope(.cached)
+    self { Networking() }
+      .scope(.cached)
   }
-
+  
   var networkManager: Factory<NetworkManager> {
-    self {
-      NetworkManager(pokemonService: PokemonService())
-    }
-    .scope(.cached)
+    self { NetworkManager(pokemonService: PokemonService()) }
+      .scope(.cached)
   }
-
+  
   var assembler: Factory<Assembler> {
     self { Assembler() }
-    .scope(.cached)
+      .scope(.cached)
   }
 }
