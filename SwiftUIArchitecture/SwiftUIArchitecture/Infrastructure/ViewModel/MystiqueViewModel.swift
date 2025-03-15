@@ -17,9 +17,6 @@ open class MystiqueViewModel<Model: CustomModel>: ObservableObject {
   /// The last value of the `Model` if exist. This variable is assigned when a `LocalState`
   /// become `.success`.
   @Published private var model: Model?
-  
-  /// Wheter the view has the default background. `true` by default.
-  @Published var hasDefaultBackground: Bool = true
     
   /// The cancellables set used for store `Combine` values.
   private var cancellables = Set<AnyCancellable>()

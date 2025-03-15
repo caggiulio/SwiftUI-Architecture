@@ -21,10 +21,17 @@ extension Container {
     self { Coordinator() }
     .scope(.cached)
   }
+  
+  var networking: Factory<Networking> {
+    self {
+      Networking()
+    }
+    .scope(.cached)
+  }
 
   var networkManager: Factory<NetworkManager> {
     self {
-      NetworkManager(pokemonWorker: NetworkWorker())
+      NetworkManager(pokemonService: PokemonService())
     }
     .scope(.cached)
   }

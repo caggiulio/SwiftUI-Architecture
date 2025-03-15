@@ -8,6 +8,6 @@
 import Foundation
 
 /// The protocol to defines the list of API calls to implements.
-protocol NetworkDataSourceProtocol {
+protocol PokemonServiceProtocol {
   func getPokemon(id: String) async throws -> Pokemon
 }

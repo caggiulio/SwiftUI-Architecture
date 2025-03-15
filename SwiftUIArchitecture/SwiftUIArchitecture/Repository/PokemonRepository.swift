@@ -18,7 +18,7 @@ extension Repository {
     
     /// Get the information of a Pokemon by his identifier.
     func getPokemon(identifier: String) async throws {
-      let pokemon = try await networkingManager.pokemonWorker.getPokemon(id: identifier)
+      let pokemon = try await networkingManager.pokemonService.getPokemon(id: identifier)
       stateContainer.state.pokemonDetail.selectedPokemon = pokemon
     }
   }

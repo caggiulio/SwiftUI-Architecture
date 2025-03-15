@@ -14,9 +14,6 @@ open class StaterViewModel: ObservableObject {
   
   // MARK: - Computed Properties
   
-  /// Wheter the view has the default background. `true` by default.
-  @Published var hasDefaultBackground: Bool = true
-  
   /// The app state.
   @Injected(\.stateContainer) var appState: StateContainer
     

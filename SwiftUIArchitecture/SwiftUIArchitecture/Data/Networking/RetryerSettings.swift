@@ -9,10 +9,12 @@
 import Foundation
 import RealHTTP
 
-struct RetryerSettings: HTTPResponseTransform {
-  func transform(response: HTTPResponse, ofRequest request: HTTPRequest) throws -> HTTPResponse {
-    request.maxRetries = 1
+extension Networking {
+  struct RetryerSettings: HTTPResponseTransform {
+    func transform(response: HTTPResponse, ofRequest request: HTTPRequest) throws -> HTTPResponse {
+      request.maxRetries = 1
 
-    return response
+      return response
+    }
   }
 }
