@@ -7,52 +7,40 @@
 
 import Foundation
 import AloyNetworking
+import RealHTTP
 
 // MARK: - NetworkWorker
 
 struct NetworkWorker: NetworkDataSourceProtocol {
   
-  // MARK: - Protocol properties
+  // MARK: - Computed Properties
+    
+  /// The `HTTPClient` object to performs network calls.
+  /// The object is contained in `RealHTTP` framework.
+  private var client: HTTPClient {
+    let stringApiProtocol = "https"
+    let stringApiURL = "pokeapi.co/api/v2/"
+    guard let baseURL = URL(string: stringApiProtocol + "://" + stringApiURL) else { fatalError("BaseURL not resolved") }
+    
+    let httpClient = HTTPClient(baseURL: baseURL, configuration: .default)
+    httpClient.responseTransformers = [
+      LoggerInformation(),
+      RetryerSettings()
+    ]
+    httpClient.validators.append(ErrorTransformer())
 
-  var networking: AloyNetworkingProtocol
-
-  // MARK: - Init
-  
-  /// The `init` with a `AloyNetworkingProtocol`.
-  /// - Parameter networking: The `AloyNetworkingProtocol`.
-  init(networking: AloyNetworkingProtocol) {
-    self.networking = networking
+    return httpClient
   }
   
-  // MARK: -  methods
+  // MARK: - Functions
   
   /// Get and transform the `PokemonDataSource` fetched from the network in the `Pokemon` return object.
   func getPokemon(id: String) async throws -> Pokemon {
-    let response = try await processResponse {
-      try await getPokemonDataSource(id: id)
+    let request = HTTPRequest {
+      $0.path = "/pokemon/\(id)"
+      $0.method = .get
     }
     
-    return response.normalizedForApp()
-  }
-  
-  private func getPokemonDataSource(id: String) async throws -> PokemonDataSource {
-    let path = "/pokemon/\(id)"
-    let request = AloyNetworkingRequest(method: .get, path: (path, nil))
-    return try await networking.send(request: request)
+    return try await request.fetch(client).decode(PokemonDataSource.self).normalizedForApp()
   }
 }
-
-private extension NetworkWorker {
-  /// Transform the `Error` in the `to CustomError`.
-  func processResponse<SuccessResponse: Decodable>(function: () async throws -> SuccessResponse) async rethrows -> SuccessResponse {
-    do {
-      return try await function()
-    } catch let error {
-      guard case AloyNetworkingError.underlying(response: let response, data: let data) = error, let data, let response else { throw CustomError.genericError(error.localizedDescription) }
-      
-      throw ErrorManager.parseCustomError(data: data, response: response)
-    }
-  }
-}
-
-

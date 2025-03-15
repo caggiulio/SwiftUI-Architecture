@@ -8,5 +8,5 @@
 /// The manager for the networking workers.
 struct NetworkManager {
   /// This is the implementation of `NetworkDataSourceProtocol`
-  var worker: NetworkDataSourceProtocol
+  var pokemonWorker: NetworkDataSourceProtocol
 }

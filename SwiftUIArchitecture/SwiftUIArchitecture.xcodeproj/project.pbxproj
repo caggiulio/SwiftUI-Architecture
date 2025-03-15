@@ -14,7 +14,6 @@
 		4DB8CD762A34BE69001FD9B8 /* SwiftUIArchitectureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CD752A34BE69001FD9B8 /* SwiftUIArchitectureUITests.swift */; };
 		4DB8CD782A34BE69001FD9B8 /* SwiftUIArchitectureUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CD772A34BE69001FD9B8 /* SwiftUIArchitectureUITestsLaunchTests.swift */; };
 		4DB8CD862A34BE8C001FD9B8 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CD852A34BE8C001FD9B8 /* LocalState.swift */; };
-		4DB8CD8B2A34BEA7001FD9B8 /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CD892A34BEA7001FD9B8 /* ErrorManager.swift */; };
 		4DB8CD8C2A34BEA7001FD9B8 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CD8A2A34BEA7001FD9B8 /* CustomError.swift */; };
 		4DB8CD942A34BF31001FD9B8 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CD922A34BF31001FD9B8 /* State.swift */; };
 		4DB8CD952A34BF31001FD9B8 /* StateContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CD932A34BF31001FD9B8 /* StateContainer.swift */; };
@@ -30,7 +29,6 @@
 		4DB8CDC02A34C2A4001FD9B8 /* CustomPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CDBF2A34C2A4001FD9B8 /* CustomPopupView.swift */; };
 		4DB8CDC32A34C313001FD9B8 /* Extension+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CDC22A34C313001FD9B8 /* Extension+Array.swift */; };
 		4DB8CDC52A34C39A001FD9B8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CDC42A34C39A001FD9B8 /* NetworkManager.swift */; };
-		4DB8CDC92A34C483001FD9B8 /* AloyNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = 4DB8CDC82A34C483001FD9B8 /* AloyNetworking */; };
 		4DB8CDCB2A34C574001FD9B8 /* NetworkDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CDCA2A34C574001FD9B8 /* NetworkDataSourceProtocol.swift */; };
 		4DB8CDCD2A34C5A4001FD9B8 /* NetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CDCC2A34C5A4001FD9B8 /* NetworkWorker.swift */; };
 		4DB8CDDC2A34C706001FD9B8 /* PokemonListItemDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CDD12A34C706001FD9B8 /* PokemonListItemDataSource.swift */; };
@@ -68,6 +66,11 @@
 		4DB8CE1B2A360589001FD9B8 /* Home+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CE1A2A360589001FD9B8 /* Home+ViewModel.swift */; };
 		4DB8CE1E2A360CA3001FD9B8 /* SplashModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8CE1D2A360CA3001FD9B8 /* SplashModel.swift */; };
 		4DD37C0D2B261D9F0024E8A8 /* PokemonRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD37C0C2B261D9F0024E8A8 /* PokemonRepositoryProtocol.swift */; };
+		73001A2F2D85D552009241D5 /* RealHTTP in Frameworks */ = {isa = PBXBuildFile; productRef = 73001A2E2D85D552009241D5 /* RealHTTP */; };
+		73001A312D85D5F0009241D5 /* LoggerInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73001A302D85D5F0009241D5 /* LoggerInformation.swift */; };
+		73001A332D85D60E009241D5 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73001A322D85D60E009241D5 /* File.swift */; };
+		73001A352D85D63E009241D5 /* RetryerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73001A342D85D63E009241D5 /* RetryerSettings.swift */; };
+		73001A372D85D654009241D5 /* ErrorTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73001A362D85D654009241D5 /* ErrorTransformer.swift */; };
 		9BD21C942D82D2F700636B39 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 9BD21C932D82D2F700636B39 /* Factory */; };
 		9BD21C962D8422B700636B39 /* StaterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD21C952D8422B700636B39 /* StaterViewModel.swift */; };
 		9BD21C982D842A3000636B39 /* LoaderModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD21C972D842A3000636B39 /* LoaderModifier.swift */; };
@@ -101,7 +104,6 @@
 		4DB8CD752A34BE69001FD9B8 /* SwiftUIArchitectureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIArchitectureUITests.swift; sourceTree = "<group>"; };
 		4DB8CD772A34BE69001FD9B8 /* SwiftUIArchitectureUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIArchitectureUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4DB8CD852A34BE8C001FD9B8 /* LocalState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
-		4DB8CD892A34BEA7001FD9B8 /* ErrorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
 		4DB8CD8A2A34BEA7001FD9B8 /* CustomError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		4DB8CD922A34BF31001FD9B8 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		4DB8CD932A34BF31001FD9B8 /* StateContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateContainer.swift; sourceTree = "<group>"; };
@@ -154,6 +156,10 @@
 		4DB8CE1A2A360589001FD9B8 /* Home+ViewModel.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = "Home+ViewModel.swift"; sourceTree = "<group>"; tabWidth = 2; };
 		4DB8CE1D2A360CA3001FD9B8 /* SplashModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashModel.swift; sourceTree = "<group>"; };
 		4DD37C0C2B261D9F0024E8A8 /* PokemonRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonRepositoryProtocol.swift; sourceTree = "<group>"; };
+		73001A302D85D5F0009241D5 /* LoggerInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerInformation.swift; sourceTree = "<group>"; };
+		73001A322D85D60E009241D5 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		73001A342D85D63E009241D5 /* RetryerSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryerSettings.swift; sourceTree = "<group>"; };
+		73001A362D85D654009241D5 /* ErrorTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTransformer.swift; sourceTree = "<group>"; };
 		9BD21C952D8422B700636B39 /* StaterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaterViewModel.swift; sourceTree = "<group>"; };
 		9BD21C972D842A3000636B39 /* LoaderModifier.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = LoaderModifier.swift; sourceTree = "<group>"; tabWidth = 2; };
 /* End PBXFileReference section */
@@ -163,7 +169,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DB8CDC92A34C483001FD9B8 /* AloyNetworking in Frameworks */,
+				73001A2F2D85D552009241D5 /* RealHTTP in Frameworks */,
 				9BD21C942D82D2F700636B39 /* Factory in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,7 +277,6 @@
 		4DB8CD882A34BEA7001FD9B8 /* Error */ = {
 			isa = PBXGroup;
 			children = (
-				4DB8CD892A34BEA7001FD9B8 /* ErrorManager.swift */,
 				4DB8CD8A2A34BEA7001FD9B8 /* CustomError.swift */,
 			);
 			path = Error;
@@ -395,9 +400,13 @@
 		4DB8CDC62A34C39D001FD9B8 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				73001A362D85D654009241D5 /* ErrorTransformer.swift */,
+				73001A322D85D60E009241D5 /* File.swift */,
 				4DB8CDC42A34C39A001FD9B8 /* NetworkManager.swift */,
 				4DB8CDCA2A34C574001FD9B8 /* NetworkDataSourceProtocol.swift */,
 				4DB8CDCC2A34C5A4001FD9B8 /* NetworkWorker.swift */,
+				73001A302D85D5F0009241D5 /* LoggerInformation.swift */,
+				73001A342D85D63E009241D5 /* RetryerSettings.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -521,8 +530,8 @@
 			);
 			name = SwiftUIArchitecture;
 			packageProductDependencies = (
-				4DB8CDC82A34C483001FD9B8 /* AloyNetworking */,
 				9BD21C932D82D2F700636B39 /* Factory */,
+				73001A2E2D85D552009241D5 /* RealHTTP */,
 			);
 			productName = SwiftUIArchitecture;
 			productReference = 4DB8CD572A34BE66001FD9B8 /* SwiftUIArchitecture.app */;
@@ -597,8 +606,8 @@
 			);
 			mainGroup = 4DB8CD4E2A34BE66001FD9B8;
 			packageReferences = (
-				4DB8CDC72A34C483001FD9B8 /* XCRemoteSwiftPackageReference "AloyNetworking" */,
 				9BD21C922D82D2F700636B39 /* XCRemoteSwiftPackageReference "Factory" */,
+				73001A2D2D85D552009241D5 /* XCRemoteSwiftPackageReference "RealHTTP" */,
 			);
 			productRefGroup = 4DB8CD582A34BE66001FD9B8 /* Products */;
 			projectDirPath = "";
@@ -644,6 +653,7 @@
 			files = (
 				4DB8CDA92A34C027001FD9B8 /* Coordinator.swift in Sources */,
 				4DB8CDC02A34C2A4001FD9B8 /* CustomPopupView.swift in Sources */,
+				73001A352D85D63E009241D5 /* RetryerSettings.swift in Sources */,
 				4DB8CDC32A34C313001FD9B8 /* Extension+Array.swift in Sources */,
 				9BD21C962D8422B700636B39 /* StaterViewModel.swift in Sources */,
 				4DB8CE0C2A34ED26001FD9B8 /* UseCase.swift in Sources */,
@@ -665,11 +675,11 @@
 				4DB8CDAF2A34C0AE001FD9B8 /* CustomModel.swift in Sources */,
 				4DB8CDFA2A34C721001FD9B8 /* FrontImage.swift in Sources */,
 				4DB8CD862A34BE8C001FD9B8 /* LocalState.swift in Sources */,
-				4DB8CD8B2A34BEA7001FD9B8 /* ErrorManager.swift in Sources */,
 				4DB8CDDF2A34C706001FD9B8 /* FormsDataSource.swift in Sources */,
 				4DB8CDFE2A34C721001FD9B8 /* Stat.swift in Sources */,
 				4DB8CD9E2A34BFD2001FD9B8 /* Normalizable.swift in Sources */,
 				4DD37C0D2B261D9F0024E8A8 /* PokemonRepositoryProtocol.swift in Sources */,
+				73001A312D85D5F0009241D5 /* LoggerInformation.swift in Sources */,
 				4DB8CDC52A34C39A001FD9B8 /* NetworkManager.swift in Sources */,
 				4DB8CDF42A34C721001FD9B8 /* Forms.swift in Sources */,
 				4DB8CDE52A34C706001FD9B8 /* AbilitiesDataSource.swift in Sources */,
@@ -690,6 +700,7 @@
 				4DB8CDE12A34C706001FD9B8 /* PokemonListDataSource.swift in Sources */,
 				4DB8CDCB2A34C574001FD9B8 /* NetworkDataSourceProtocol.swift in Sources */,
 				4DB8CDF92A34C721001FD9B8 /* PokemonListItem.swift in Sources */,
+				73001A372D85D654009241D5 /* ErrorTransformer.swift in Sources */,
 				4DB8CDF72A34C721001FD9B8 /* CurrentLocation.swift in Sources */,
 				4DB8CDBD2A34C27B001FD9B8 /* Interaction.swift in Sources */,
 				4DB8CDCD2A34C5A4001FD9B8 /* NetworkWorker.swift in Sources */,
@@ -697,6 +708,7 @@
 				4DB8CD952A34BF31001FD9B8 /* StateContainer.swift in Sources */,
 				4DB8CDE22A34C706001FD9B8 /* PokemonDataSource.swift in Sources */,
 				4DB8CDE32A34C706001FD9B8 /* OfficialArtworkDataSource.swift in Sources */,
+				73001A332D85D60E009241D5 /* File.swift in Sources */,
 				4DB8CD9A2A34BF6B001FD9B8 /* ResolverRegister.swift in Sources */,
 				4DB8CE092A34EA83001FD9B8 /* Repository.swift in Sources */,
 			);
@@ -1039,12 +1051,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		4DB8CDC72A34C483001FD9B8 /* XCRemoteSwiftPackageReference "AloyNetworking" */ = {
+		73001A2D2D85D552009241D5 /* XCRemoteSwiftPackageReference "RealHTTP" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/caggiulio/AloyNetworking";
+			repositoryURL = "https://github.com/immobiliare/RealHTTP.git";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.9.0;
 			};
 		};
 		9BD21C922D82D2F700636B39 /* XCRemoteSwiftPackageReference "Factory" */ = {
@@ -1058,10 +1070,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		4DB8CDC82A34C483001FD9B8 /* AloyNetworking */ = {
+		73001A2E2D85D552009241D5 /* RealHTTP */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 4DB8CDC72A34C483001FD9B8 /* XCRemoteSwiftPackageReference "AloyNetworking" */;
-			productName = AloyNetworking;
+			package = 73001A2D2D85D552009241D5 /* XCRemoteSwiftPackageReference "RealHTTP" */;
+			productName = RealHTTP;
 		};
 		9BD21C932D82D2F700636B39 /* Factory */ = {
 			isa = XCSwiftPackageProductDependency;

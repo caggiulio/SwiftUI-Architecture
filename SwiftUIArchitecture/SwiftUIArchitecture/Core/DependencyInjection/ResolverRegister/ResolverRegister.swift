@@ -24,15 +24,7 @@ extension Container {
 
   var networkManager: Factory<NetworkManager> {
     self {
-      let networking: AloyNetworkingProtocol = {
-        let networking = AloyNetworking(
-          baseURL: "https://pokeapi.co/api/v2/", cachePolicy: .returnCacheDataElseLoad
-        )
-        
-        return networking
-      }()
-      
-      return NetworkManager(worker: NetworkWorker(networking: networking))
+      NetworkManager(pokemonWorker: NetworkWorker())
     }
     .scope(.cached)
   }
