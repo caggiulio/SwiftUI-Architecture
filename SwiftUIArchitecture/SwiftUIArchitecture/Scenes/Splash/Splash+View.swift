@@ -12,7 +12,7 @@ extension UI.Funnel.Splash {
     
     // MARK: - Stored Properties
     
-    /// The `SplashViewModel` of the view.
+    /// The `UI.Funnel.Splash.ViewModel` of the view.
     @StateObject var viewModel = UI.Funnel.Splash.ViewModel()
     
     // MARK: - View

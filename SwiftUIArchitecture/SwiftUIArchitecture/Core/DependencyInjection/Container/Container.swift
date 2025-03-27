@@ -2,7 +2,6 @@
 //  DependencyManager.swift
 //
 
-import AloyNetworking
 import Factory
 import Foundation
 

@@ -16,6 +16,7 @@ extension UI.Funnel.Splash {
     
     // MARK: - DidAppear
     
+    /// Called when the view appears.
     @MainActor
     func didAppear() {
       localState = .success(

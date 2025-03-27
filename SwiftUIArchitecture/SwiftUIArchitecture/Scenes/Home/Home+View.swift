@@ -12,7 +12,7 @@ extension UI.Funnel.Home {
     
     // MARK: - Stored Properties
     
-    /// The `HomeViewModel` of the view.
+    /// The `UI.Funnel.Home.ViewModel` of the view.
     @StateObject var viewModel = UI.Funnel.Home.ViewModel()
     
     // MARK: - View
