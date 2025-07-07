@@ -37,7 +37,7 @@ extension UI.Funnel.Home {
     
     // MARK: - Update
     
-    override func update(state: AppState) {
+    override func update(state: AppStateable) {
       pokemon = appState.state.pokemonDetail.selectedPokemon
       localState = .success
     }

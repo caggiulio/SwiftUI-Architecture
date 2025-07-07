@@ -26,7 +26,9 @@ extension UI.Funnel.Splash {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .edgesIgnoringSafeArea(.all)
       }
-      .onAppear(perform: viewModel.didAppear)
+      .onAppear {
+          viewModel.didAppear()
+      }
     }
   }
 }

@@ -12,7 +12,7 @@ extension Container {
   }
   
   var stateContainer: Factory<StateContainer> {
-    self { StateContainer() }
+    self { StateContainer(state: self.appState.resolve()) }
       .scope(.cached)
   }
   
@@ -33,6 +33,11 @@ extension Container {
   
   var assembler: Factory<Assembler> {
     self { Assembler() }
+      .scope(.cached)
+  }
+  
+  private var appState: Factory<AppStateable> {
+    self { AppState() }
       .scope(.cached)
   }
 }

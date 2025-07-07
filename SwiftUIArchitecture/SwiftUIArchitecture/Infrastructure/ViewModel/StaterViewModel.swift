@@ -89,6 +89,6 @@ open class StaterViewModel: ObservableObject {
    - Subclassing:
      Subclasses should override this function to provide custom behavior when the app state changes. The default implementation of this function does nothing.
    */
-  open func update(state: AppState) {}
+  open func update(state: AppStateable) {}
 }
 
